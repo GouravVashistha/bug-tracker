@@ -1,0 +1,20 @@
+server:
+  port: 8761
+  servletPath: /custom
+
+spring:
+  application:
+    name: SERVICE-REGISTRY
+
+
+
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+  server:
+    enableSelfPreservation: false
+
+management:
+  security:
+    enabled: false

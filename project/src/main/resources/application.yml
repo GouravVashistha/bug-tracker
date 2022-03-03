@@ -1,0 +1,9 @@
+server:
+  port: 9003
+
+spring:
+  application:
+    name: PROJECT-SERVICE
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher

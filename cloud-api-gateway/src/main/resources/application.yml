@@ -1,0 +1,73 @@
+server:
+  port: 9191
+
+spring:
+  application:
+    name: API-GATEWAY
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+      - id: USER-SERVICE
+        uri: http://localhost:9002/
+        predicates:
+        - Path=/users/**
+        filters:
+        - name: CircuitBreaker
+          args:
+            name: USER-SERVICE
+            fallbackuri: forward:/userServiceFallBack
+      - id: ROLE-SERVICE
+        uri: http://localhost:9001/
+        predicates:
+        - Path=/roles/**
+        filters:
+        - name: CircuitBreaker
+          args:
+            name: ROLE-SERVICE
+            fallbackuri: forward:/roleServiceFallBack
+      - id: PROJECT-SERVICE
+        uri: http://localhost:9003/
+        predicates:
+        - Path=/projects/**
+        filters:
+        - name: CircuitBreaker
+          args:
+            name: PROJECT-SERVICE
+            fallbackuri: forward:/projectServiceFallBack
+      - id: BUG-SERVICE
+        uri: http://localhost:9004/
+        predicates:
+        - Path=/bugs/**
+        filters:
+        - name: CircuitBreaker
+          args:
+            name: BUG-SERVICE
+            fallbackuri: forward:/bugServiceFallBack
+      - id: COMMENT-SERVICE
+        uri: http://localhost:9005/
+        predicates:
+        - Path=/comments/**
+        filters:
+        - name: CircuitBreaker
+          args:
+            name: COMMENT-SERVICE
+            fallbackuri: forward:/commentsServiceFallBack
+
+
+hystrix:
+  command:
+    fallbackcmd:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 4000
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream
