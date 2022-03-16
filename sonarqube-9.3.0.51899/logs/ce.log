@@ -1,0 +1,9 @@
+2022.03.16 11:52:50 INFO  ce[][o.s.p.ProcessEntryPoint] Starting ce
+2022.03.16 11:52:50 INFO  ce[][o.s.ce.app.CeServer] Compute Engine starting up...
+2022.03.16 11:52:51 INFO  ce[][o.s.s.e.EsClientProvider] Connected to local Elasticsearch: [http://127.0.0.1:9001]
+2022.03.16 11:52:51 INFO  ce[][o.sonar.db.Database] Create JDBC data source for jdbc:h2:tcp://127.0.0.1:9092/sonar
+2022.03.16 11:52:51 WARN  ce[][o.s.db.dialect.H2] H2 database should be used for evaluation purpose only.
+2022.03.16 11:52:52 INFO  ce[][o.s.s.p.ServerFileSystemImpl] SonarQube home: C:\Users\skaderi\IntellJ-workspace\bug-tracker\sonarqube-9.3.0.51899
+2022.03.16 11:52:52 INFO  ce[][o.s.c.c.CePluginRepository] Load plugins
+2022.03.16 11:52:54 INFO  ce[][o.s.c.c.ComputeEngineContainerImpl] Running Community edition
+2022.03.16 11:52:54 INFO  ce[][o.s.ce.app.CeServer] Compute Engine is operational

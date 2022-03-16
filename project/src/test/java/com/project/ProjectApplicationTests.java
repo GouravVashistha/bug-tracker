@@ -22,12 +22,6 @@ class ProjectApplicationTests {
 
 	@Test
 	@Order(1)
-	void projectLoads(){
-		assertNotNull(projectRepository.findAll());
-	}
-
-	@Test
-	@Order(2)
 	void saveProjectTest(){
 
 		Project project= new Project();
@@ -40,6 +34,12 @@ class ProjectApplicationTests {
 
 		projectRepository.save(project);
 		Assertions.assertThat(project.getProjectId()).isPositive();
+	}
+
+	@Test
+	@Order(2)
+	void projectLoads(){
+		assertNotNull(projectRepository.findAll());
 	}
 
 	@Test

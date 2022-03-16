@@ -1,0 +1,876 @@
+--> Wrapper Started as Console
+Launching a JVM...
+Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+  Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+
+2022.03.08 00:30:54 INFO  app[][o.s.a.AppFileSystem] Cleaning or creating temp directory C:\Users\skaderi\IntellJ-workspace\bug-tracker\sonarqube-9.3.0.51899\temp
+2022.03.08 00:30:54 INFO  app[][o.s.a.es.EsSettings] Elasticsearch listening on [HTTP: 127.0.0.1:9001, TCP: 127.0.0.1:62526]
+2022.03.08 00:30:54 INFO  app[][o.s.a.ProcessLauncherImpl] Launch process[[key='es', ipcIndex=1, logFilenamePrefix=es]] from [C:\Users\skaderi\IntellJ-workspace\bug-tracker\sonarqube-9.3.0.51899\elasticsearch]: C:\Program Files\Eclipse Foundation\jdk-11.0.12.7-hotspot\bin\java -XX:+UseG1GC -Djava.io.tmpdir=C:\Users\skaderi\IntellJ-workspace\bug-tracker\sonarqube-9.3.0.51899\temp -XX:ErrorFile=../logs/es_hs_err_pid%p.log -Des.networkaddress.cache.ttl=60 -Des.networkaddress.cache.negative.ttl=10 -XX:+AlwaysPreTouch -Xss1m -Djava.awt.headless=true -Dfile.encoding=UTF-8 -Djna.nosys=true -Djna.tmpdir=C:\Users\skaderi\IntellJ-workspace\bug-tracker\sonarqube-9.3.0.51899\temp -XX:-OmitStackTraceInFastThrow -Dio.netty.noUnsafe=true -Dio.netty.noKeySetOptimization=true -Dio.netty.recycler.maxCapacityPerThread=0 -Dio.netty.allocator.numDirectArenas=0 -Dlog4j.shutdownHookEnabled=false -Dlog4j2.disable.jmx=true -Dlog4j2.formatMsgNoLookups=true -Djava.locale.providers=COMPAT -Dcom.redhat.fips=false -Xmx512m -Xms512m -XX:MaxDirectMemorySize=256m -XX:+HeapDumpOnOutOfMemoryError -Delasticsearch -Des.path.home=C:\Users\skaderi\IntellJ-workspace\bug-tracker\sonarqube-9.3.0.51899\elasticsearch -Des.path.conf=C:\Users\skaderi\IntellJ-workspace\bug-tracker\sonarqube-9.3.0.51899\temp\conf\es -cp lib/* org.elasticsearch.bootstrap.Elasticsearch
+2022.03.08 00:30:54 INFO  app[][o.s.a.SchedulerImpl] Waiting for Elasticsearch to be up and running
+2022.03.08 00:30:56 ERROR app[][o.s.a.p.EsManagedProcess] Failed to check status
+org.elasticsearch.ElasticsearchException: java.util.concurrent.ExecutionException: org.elasticsearch.client.ResponseException: method [GET], host [http://127.0.0.1:9001], URI [/], status line [HTTP/1.1 404 ]
+{"timestamp":"2022-03-07T19:00:55.937+00:00","status":404,"error":"Not Found","message":"No message available","path":"/"}
+	at org.elasticsearch.client.RestHighLevelClient.performClientRequest(RestHighLevelClient.java:2695)
+	at org.elasticsearch.client.RestHighLevelClient.internalPerformRequest(RestHighLevelClient.java:2171)
+	at org.elasticsearch.client.RestHighLevelClient.performRequest(RestHighLevelClient.java:2137)
+	at org.elasticsearch.client.RestHighLevelClient.performRequestAndParseEntity(RestHighLevelClient.java:2105)
+	at org.elasticsearch.client.ClusterClient.health(ClusterClient.java:151)
+	at org.sonar.application.es.EsConnectorImpl.getClusterHealthStatus(EsConnectorImpl.java:64)
+	at org.sonar.application.process.EsManagedProcess.checkStatus(EsManagedProcess.java:97)
+	at org.sonar.application.process.EsManagedProcess.checkOperational(EsManagedProcess.java:82)
+	at org.sonar.application.process.EsManagedProcess.isOperational(EsManagedProcess.java:67)
+	at org.sonar.application.process.ManagedProcessHandler.refreshState(ManagedProcessHandler.java:220)
+	at org.sonar.application.process.ManagedProcessHandler$EventWatcher.run(ManagedProcessHandler.java:285)
+Caused by: java.util.concurrent.ExecutionException: org.elasticsearch.client.ResponseException: method [GET], host [http://127.0.0.1:9001], URI [/], status line [HTTP/1.1 404 ]
+{"timestamp":"2022-03-07T19:00:55.937+00:00","status":404,"error":"Not Found","message":"No message available","path":"/"}
+	at org.elasticsearch.common.util.concurrent.BaseFuture$Sync.getValue(BaseFuture.java:257)
+	at org.elasticsearch.common.util.concurrent.BaseFuture$Sync.get(BaseFuture.java:244)
+	at org.elasticsearch.common.util.concurrent.BaseFuture.get(BaseFuture.java:75)
+	at org.elasticsearch.client.RestHighLevelClient.performClientRequest(RestHighLevelClient.java:2692)
+	... 10 common frames omitted
+Caused by: org.elasticsearch.client.ResponseException: method [GET], host [http://127.0.0.1:9001], URI [/], status line [HTTP/1.1 404 ]
+{"timestamp":"2022-03-07T19:00:55.937+00:00","status":404,"error":"Not Found","message":"No message available","path":"/"}
+	at org.elasticsearch.client.RestClient.convertResponse(RestClient.java:331)
+	at org.elasticsearch.client.RestClient.access$1800(RestClient.java:106)
+	at org.elasticsearch.client.RestClient$1.completed(RestClient.java:381)
+	at org.elasticsearch.client.RestClient$1.completed(RestClient.java:377)
+	at org.apache.http.concurrent.BasicFuture.completed(BasicFuture.java:122)
+	at org.apache.http.impl.nio.client.DefaultClientExchangeHandlerImpl.responseCompleted(DefaultClientExchangeHandlerImpl.java:181)
+	at org.apache.http.nio.protocol.HttpAsyncRequestExecutor.processResponse(HttpAsyncRequestExecutor.java:448)
+	at org.apache.http.nio.protocol.HttpAsyncRequestExecutor.inputReady(HttpAsyncRequestExecutor.java:338)
+	at org.apache.http.impl.nio.DefaultNHttpClientConnection.consumeInput(DefaultNHttpClientConnection.java:265)
+	at org.apache.http.impl.nio.client.InternalIODispatch.onInputReady(InternalIODispatch.java:81)
+	at org.apache.http.impl.nio.client.InternalIODispatch.onInputReady(InternalIODispatch.java:39)
+	at org.apache.http.impl.nio.reactor.AbstractIODispatch.inputReady(AbstractIODispatch.java:114)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.readable(BaseIOReactor.java:162)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvent(AbstractIOReactor.java:337)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvents(AbstractIOReactor.java:315)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.execute(AbstractIOReactor.java:276)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.execute(BaseIOReactor.java:104)
+	at org.apache.http.impl.nio.reactor.AbstractMultiworkerIOReactor$Worker.run(AbstractMultiworkerIOReactor.java:591)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+2022.03.08 00:30:56 ERROR app[][o.s.a.p.EsManagedProcess] Failed to check status
+org.elasticsearch.ElasticsearchException: java.util.concurrent.ExecutionException: org.elasticsearch.client.ResponseException: method [GET], host [http://127.0.0.1:9001], URI [/], status line [HTTP/1.1 404 ]
+{"timestamp":"2022-03-07T19:00:56.702+00:00","status":404,"error":"Not Found","message":"No message available","path":"/"}
+	at org.elasticsearch.client.RestHighLevelClient.performClientRequest(RestHighLevelClient.java:2695)
+	at org.elasticsearch.client.RestHighLevelClient.internalPerformRequest(RestHighLevelClient.java:2171)
+	at org.elasticsearch.client.RestHighLevelClient.performRequest(RestHighLevelClient.java:2137)
+	at org.elasticsearch.client.RestHighLevelClient.performRequestAndParseEntity(RestHighLevelClient.java:2105)
+	at org.elasticsearch.client.ClusterClient.health(ClusterClient.java:151)
+	at org.sonar.application.es.EsConnectorImpl.getClusterHealthStatus(EsConnectorImpl.java:64)
+	at org.sonar.application.process.EsManagedProcess.checkStatus(EsManagedProcess.java:97)
+	at org.sonar.application.process.EsManagedProcess.checkOperational(EsManagedProcess.java:82)
+	at org.sonar.application.process.EsManagedProcess.isOperational(EsManagedProcess.java:67)
+	at org.sonar.application.process.ManagedProcessHandler.refreshState(ManagedProcessHandler.java:220)
+	at org.sonar.application.process.ManagedProcessHandler$EventWatcher.run(ManagedProcessHandler.java:285)
+Caused by: java.util.concurrent.ExecutionException: org.elasticsearch.client.ResponseException: method [GET], host [http://127.0.0.1:9001], URI [/], status line [HTTP/1.1 404 ]
+{"timestamp":"2022-03-07T19:00:56.702+00:00","status":404,"error":"Not Found","message":"No message available","path":"/"}
+	at org.elasticsearch.common.util.concurrent.BaseFuture$Sync.getValue(BaseFuture.java:257)
+	at org.elasticsearch.common.util.concurrent.BaseFuture$Sync.get(BaseFuture.java:244)
+	at org.elasticsearch.common.util.concurrent.BaseFuture.get(BaseFuture.java:75)
+	at org.elasticsearch.client.RestHighLevelClient.performClientRequest(RestHighLevelClient.java:2692)
+	... 10 common frames omitted
+Caused by: org.elasticsearch.client.ResponseException: method [GET], host [http://127.0.0.1:9001], URI [/], status line [HTTP/1.1 404 ]
+{"timestamp":"2022-03-07T19:00:56.702+00:00","status":404,"error":"Not Found","message":"No message available","path":"/"}
+	at org.elasticsearch.client.RestClient.convertResponse(RestClient.java:331)
+	at org.elasticsearch.client.RestClient.access$1800(RestClient.java:106)
+	at org.elasticsearch.client.RestClient$1.completed(RestClient.java:381)
+	at org.elasticsearch.client.RestClient$1.completed(RestClient.java:377)
+	at org.apache.http.concurrent.BasicFuture.completed(BasicFuture.java:122)
+	at org.apache.http.impl.nio.client.DefaultClientExchangeHandlerImpl.responseCompleted(DefaultClientExchangeHandlerImpl.java:181)
+	at org.apache.http.nio.protocol.HttpAsyncRequestExecutor.processResponse(HttpAsyncRequestExecutor.java:448)
+	at org.apache.http.nio.protocol.HttpAsyncRequestExecutor.inputReady(HttpAsyncRequestExecutor.java:338)
+	at org.apache.http.impl.nio.DefaultNHttpClientConnection.consumeInput(DefaultNHttpClientConnection.java:265)
+	at org.apache.http.impl.nio.client.InternalIODispatch.onInputReady(InternalIODispatch.java:81)
+	at org.apache.http.impl.nio.client.InternalIODispatch.onInputReady(InternalIODispatch.java:39)
+	at org.apache.http.impl.nio.reactor.AbstractIODispatch.inputReady(AbstractIODispatch.java:114)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.readable(BaseIOReactor.java:162)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvent(AbstractIOReactor.java:337)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvents(AbstractIOReactor.java:315)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.execute(AbstractIOReactor.java:276)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.execute(BaseIOReactor.java:104)
+	at org.apache.http.impl.nio.reactor.AbstractMultiworkerIOReactor$Worker.run(AbstractMultiworkerIOReactor.java:591)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+2022.03.08 00:30:57 ERROR app[][o.s.a.p.EsManagedProcess] Failed to check status
+org.elasticsearch.ElasticsearchException: java.util.concurrent.ExecutionException: org.elasticsearch.client.ResponseException: method [GET], host [http://127.0.0.1:9001], URI [/], status line [HTTP/1.1 404 ]
+{"timestamp":"2022-03-07T19:00:57.279+00:00","status":404,"error":"Not Found","message":"No message available","path":"/"}
+	at org.elasticsearch.client.RestHighLevelClient.performClientRequest(RestHighLevelClient.java:2695)
+	at org.elasticsearch.client.RestHighLevelClient.internalPerformRequest(RestHighLevelClient.java:2171)
+	at org.elasticsearch.client.RestHighLevelClient.performRequest(RestHighLevelClient.java:2137)
+	at org.elasticsearch.client.RestHighLevelClient.performRequestAndParseEntity(RestHighLevelClient.java:2105)
+	at org.elasticsearch.client.ClusterClient.health(ClusterClient.java:151)
+	at org.sonar.application.es.EsConnectorImpl.getClusterHealthStatus(EsConnectorImpl.java:64)
+	at org.sonar.application.process.EsManagedProcess.checkStatus(EsManagedProcess.java:97)
+	at org.sonar.application.process.EsManagedProcess.checkOperational(EsManagedProcess.java:82)
+	at org.sonar.application.process.EsManagedProcess.isOperational(EsManagedProcess.java:67)
+	at org.sonar.application.process.ManagedProcessHandler.refreshState(ManagedProcessHandler.java:220)
+	at org.sonar.application.process.ManagedProcessHandler$EventWatcher.run(ManagedProcessHandler.java:285)
+Caused by: java.util.concurrent.ExecutionException: org.elasticsearch.client.ResponseException: method [GET], host [http://127.0.0.1:9001], URI [/], status line [HTTP/1.1 404 ]
+{"timestamp":"2022-03-07T19:00:57.279+00:00","status":404,"error":"Not Found","message":"No message available","path":"/"}
+	at org.elasticsearch.common.util.concurrent.BaseFuture$Sync.getValue(BaseFuture.java:257)
+	at org.elasticsearch.common.util.concurrent.BaseFuture$Sync.get(BaseFuture.java:244)
+	at org.elasticsearch.common.util.concurrent.BaseFuture.get(BaseFuture.java:75)
+	at org.elasticsearch.client.RestHighLevelClient.performClientRequest(RestHighLevelClient.java:2692)
+	... 10 common frames omitted
+Caused by: org.elasticsearch.client.ResponseException: method [GET], host [http://127.0.0.1:9001], URI [/], status line [HTTP/1.1 404 ]
+{"timestamp":"2022-03-07T19:00:57.279+00:00","status":404,"error":"Not Found","message":"No message available","path":"/"}
+	at org.elasticsearch.client.RestClient.convertResponse(RestClient.java:331)
+	at org.elasticsearch.client.RestClient.access$1800(RestClient.java:106)
+	at org.elasticsearch.client.RestClient$1.completed(RestClient.java:381)
+	at org.elasticsearch.client.RestClient$1.completed(RestClient.java:377)
+	at org.apache.http.concurrent.BasicFuture.completed(BasicFuture.java:122)
+	at org.apache.http.impl.nio.client.DefaultClientExchangeHandlerImpl.responseCompleted(DefaultClientExchangeHandlerImpl.java:181)
+	at org.apache.http.nio.protocol.HttpAsyncRequestExecutor.processResponse(HttpAsyncRequestExecutor.java:448)
+	at org.apache.http.nio.protocol.HttpAsyncRequestExecutor.inputReady(HttpAsyncRequestExecutor.java:338)
+	at org.apache.http.impl.nio.DefaultNHttpClientConnection.consumeInput(DefaultNHttpClientConnection.java:265)
+	at org.apache.http.impl.nio.client.InternalIODispatch.onInputReady(InternalIODispatch.java:81)
+	at org.apache.http.impl.nio.client.InternalIODispatch.onInputReady(InternalIODispatch.java:39)
+	at org.apache.http.impl.nio.reactor.AbstractIODispatch.inputReady(AbstractIODispatch.java:114)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.readable(BaseIOReactor.java:162)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvent(AbstractIOReactor.java:337)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvents(AbstractIOReactor.java:315)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.execute(AbstractIOReactor.java:276)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.execute(BaseIOReactor.java:104)
+	at org.apache.http.impl.nio.reactor.AbstractMultiworkerIOReactor$Worker.run(AbstractMultiworkerIOReactor.java:591)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+2022.03.08 00:30:57 ERROR app[][o.s.a.p.EsManagedProcess] Failed to check status
+org.elasticsearch.ElasticsearchException: java.util.concurrent.ExecutionException: org.elasticsearch.client.ResponseException: method [GET], host [http://127.0.0.1:9001], URI [/], status line [HTTP/1.1 404 ]
+{"timestamp":"2022-03-07T19:00:57.843+00:00","status":404,"error":"Not Found","message":"No message available","path":"/"}
+	at org.elasticsearch.client.RestHighLevelClient.performClientRequest(RestHighLevelClient.java:2695)
+	at org.elasticsearch.client.RestHighLevelClient.internalPerformRequest(RestHighLevelClient.java:2171)
+	at org.elasticsearch.client.RestHighLevelClient.performRequest(RestHighLevelClient.java:2137)
+	at org.elasticsearch.client.RestHighLevelClient.performRequestAndParseEntity(RestHighLevelClient.java:2105)
+	at org.elasticsearch.client.ClusterClient.health(ClusterClient.java:151)
+	at org.sonar.application.es.EsConnectorImpl.getClusterHealthStatus(EsConnectorImpl.java:64)
+	at org.sonar.application.process.EsManagedProcess.checkStatus(EsManagedProcess.java:97)
+	at org.sonar.application.process.EsManagedProcess.checkOperational(EsManagedProcess.java:82)
+	at org.sonar.application.process.EsManagedProcess.isOperational(EsManagedProcess.java:67)
+	at org.sonar.application.process.ManagedProcessHandler.refreshState(ManagedProcessHandler.java:220)
+	at org.sonar.application.process.ManagedProcessHandler$EventWatcher.run(ManagedProcessHandler.java:285)
+Caused by: java.util.concurrent.ExecutionException: org.elasticsearch.client.ResponseException: method [GET], host [http://127.0.0.1:9001], URI [/], status line [HTTP/1.1 404 ]
+{"timestamp":"2022-03-07T19:00:57.843+00:00","status":404,"error":"Not Found","message":"No message available","path":"/"}
+	at org.elasticsearch.common.util.concurrent.BaseFuture$Sync.getValue(BaseFuture.java:257)
+	at org.elasticsearch.common.util.concurrent.BaseFuture$Sync.get(BaseFuture.java:244)
+	at org.elasticsearch.common.util.concurrent.BaseFuture.get(BaseFuture.java:75)
+	at org.elasticsearch.client.RestHighLevelClient.performClientRequest(RestHighLevelClient.java:2692)
+	... 10 common frames omitted
+Caused by: org.elasticsearch.client.ResponseException: method [GET], host [http://127.0.0.1:9001], URI [/], status line [HTTP/1.1 404 ]
+{"timestamp":"2022-03-07T19:00:57.843+00:00","status":404,"error":"Not Found","message":"No message available","path":"/"}
+	at org.elasticsearch.client.RestClient.convertResponse(RestClient.java:331)
+	at org.elasticsearch.client.RestClient.access$1800(RestClient.java:106)
+	at org.elasticsearch.client.RestClient$1.completed(RestClient.java:381)
+	at org.elasticsearch.client.RestClient$1.completed(RestClient.java:377)
+	at org.apache.http.concurrent.BasicFuture.completed(BasicFuture.java:122)
+	at org.apache.http.impl.nio.client.DefaultClientExchangeHandlerImpl.responseCompleted(DefaultClientExchangeHandlerImpl.java:181)
+	at org.apache.http.nio.protocol.HttpAsyncRequestExecutor.processResponse(HttpAsyncRequestExecutor.java:448)
+	at org.apache.http.nio.protocol.HttpAsyncRequestExecutor.inputReady(HttpAsyncRequestExecutor.java:338)
+	at org.apache.http.impl.nio.DefaultNHttpClientConnection.consumeInput(DefaultNHttpClientConnection.java:265)
+	at org.apache.http.impl.nio.client.InternalIODispatch.onInputReady(InternalIODispatch.java:81)
+	at org.apache.http.impl.nio.client.InternalIODispatch.onInputReady(InternalIODispatch.java:39)
+	at org.apache.http.impl.nio.reactor.AbstractIODispatch.inputReady(AbstractIODispatch.java:114)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.readable(BaseIOReactor.java:162)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvent(AbstractIOReactor.java:337)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvents(AbstractIOReactor.java:315)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.execute(AbstractIOReactor.java:276)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.execute(BaseIOReactor.java:104)
+	at org.apache.http.impl.nio.reactor.AbstractMultiworkerIOReactor$Worker.run(AbstractMultiworkerIOReactor.java:591)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+2022.03.08 00:30:58 ERROR app[][o.s.a.p.EsManagedProcess] Failed to check status
+org.elasticsearch.ElasticsearchException: java.util.concurrent.ExecutionException: org.elasticsearch.client.ResponseException: method [GET], host [http://127.0.0.1:9001], URI [/], status line [HTTP/1.1 404 ]
+{"timestamp":"2022-03-07T19:00:58.412+00:00","status":404,"error":"Not Found","message":"No message available","path":"/"}
+	at org.elasticsearch.client.RestHighLevelClient.performClientRequest(RestHighLevelClient.java:2695)
+	at org.elasticsearch.client.RestHighLevelClient.internalPerformRequest(RestHighLevelClient.java:2171)
+	at org.elasticsearch.client.RestHighLevelClient.performRequest(RestHighLevelClient.java:2137)
+	at org.elasticsearch.client.RestHighLevelClient.performRequestAndParseEntity(RestHighLevelClient.java:2105)
+	at org.elasticsearch.client.ClusterClient.health(ClusterClient.java:151)
+	at org.sonar.application.es.EsConnectorImpl.getClusterHealthStatus(EsConnectorImpl.java:64)
+	at org.sonar.application.process.EsManagedProcess.checkStatus(EsManagedProcess.java:97)
+	at org.sonar.application.process.EsManagedProcess.checkOperational(EsManagedProcess.java:82)
+	at org.sonar.application.process.EsManagedProcess.isOperational(EsManagedProcess.java:67)
+	at org.sonar.application.process.ManagedProcessHandler.refreshState(ManagedProcessHandler.java:220)
+	at org.sonar.application.process.ManagedProcessHandler$EventWatcher.run(ManagedProcessHandler.java:285)
+Caused by: java.util.concurrent.ExecutionException: org.elasticsearch.client.ResponseException: method [GET], host [http://127.0.0.1:9001], URI [/], status line [HTTP/1.1 404 ]
+{"timestamp":"2022-03-07T19:00:58.412+00:00","status":404,"error":"Not Found","message":"No message available","path":"/"}
+	at org.elasticsearch.common.util.concurrent.BaseFuture$Sync.getValue(BaseFuture.java:257)
+	at org.elasticsearch.common.util.concurrent.BaseFuture$Sync.get(BaseFuture.java:244)
+	at org.elasticsearch.common.util.concurrent.BaseFuture.get(BaseFuture.java:75)
+	at org.elasticsearch.client.RestHighLevelClient.performClientRequest(RestHighLevelClient.java:2692)
+	... 10 common frames omitted
+Caused by: org.elasticsearch.client.ResponseException: method [GET], host [http://127.0.0.1:9001], URI [/], status line [HTTP/1.1 404 ]
+{"timestamp":"2022-03-07T19:00:58.412+00:00","status":404,"error":"Not Found","message":"No message available","path":"/"}
+	at org.elasticsearch.client.RestClient.convertResponse(RestClient.java:331)
+	at org.elasticsearch.client.RestClient.access$1800(RestClient.java:106)
+	at org.elasticsearch.client.RestClient$1.completed(RestClient.java:381)
+	at org.elasticsearch.client.RestClient$1.completed(RestClient.java:377)
+	at org.apache.http.concurrent.BasicFuture.completed(BasicFuture.java:122)
+	at org.apache.http.impl.nio.client.DefaultClientExchangeHandlerImpl.responseCompleted(DefaultClientExchangeHandlerImpl.java:181)
+	at org.apache.http.nio.protocol.HttpAsyncRequestExecutor.processResponse(HttpAsyncRequestExecutor.java:448)
+	at org.apache.http.nio.protocol.HttpAsyncRequestExecutor.inputReady(HttpAsyncRequestExecutor.java:338)
+	at org.apache.http.impl.nio.DefaultNHttpClientConnection.consumeInput(DefaultNHttpClientConnection.java:265)
+	at org.apache.http.impl.nio.client.InternalIODispatch.onInputReady(InternalIODispatch.java:81)
+	at org.apache.http.impl.nio.client.InternalIODispatch.onInputReady(InternalIODispatch.java:39)
+	at org.apache.http.impl.nio.reactor.AbstractIODispatch.inputReady(AbstractIODispatch.java:114)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.readable(BaseIOReactor.java:162)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvent(AbstractIOReactor.java:337)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvents(AbstractIOReactor.java:315)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.execute(AbstractIOReactor.java:276)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.execute(BaseIOReactor.java:104)
+	at org.apache.http.impl.nio.reactor.AbstractMultiworkerIOReactor$Worker.run(AbstractMultiworkerIOReactor.java:591)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+2022.03.08 00:30:58 ERROR app[][o.s.a.p.EsManagedProcess] Failed to check status
+org.elasticsearch.ElasticsearchException: java.util.concurrent.ExecutionException: org.elasticsearch.client.ResponseException: method [GET], host [http://127.0.0.1:9001], URI [/], status line [HTTP/1.1 404 ]
+{"timestamp":"2022-03-07T19:00:58.989+00:00","status":404,"error":"Not Found","message":"No message available","path":"/"}
+	at org.elasticsearch.client.RestHighLevelClient.performClientRequest(RestHighLevelClient.java:2695)
+	at org.elasticsearch.client.RestHighLevelClient.internalPerformRequest(RestHighLevelClient.java:2171)
+	at org.elasticsearch.client.RestHighLevelClient.performRequest(RestHighLevelClient.java:2137)
+	at org.elasticsearch.client.RestHighLevelClient.performRequestAndParseEntity(RestHighLevelClient.java:2105)
+	at org.elasticsearch.client.ClusterClient.health(ClusterClient.java:151)
+	at org.sonar.application.es.EsConnectorImpl.getClusterHealthStatus(EsConnectorImpl.java:64)
+	at org.sonar.application.process.EsManagedProcess.checkStatus(EsManagedProcess.java:97)
+	at org.sonar.application.process.EsManagedProcess.checkOperational(EsManagedProcess.java:82)
+	at org.sonar.application.process.EsManagedProcess.isOperational(EsManagedProcess.java:67)
+	at org.sonar.application.process.ManagedProcessHandler.refreshState(ManagedProcessHandler.java:220)
+	at org.sonar.application.process.ManagedProcessHandler$EventWatcher.run(ManagedProcessHandler.java:285)
+Caused by: java.util.concurrent.ExecutionException: org.elasticsearch.client.ResponseException: method [GET], host [http://127.0.0.1:9001], URI [/], status line [HTTP/1.1 404 ]
+{"timestamp":"2022-03-07T19:00:58.989+00:00","status":404,"error":"Not Found","message":"No message available","path":"/"}
+	at org.elasticsearch.common.util.concurrent.BaseFuture$Sync.getValue(BaseFuture.java:257)
+	at org.elasticsearch.common.util.concurrent.BaseFuture$Sync.get(BaseFuture.java:244)
+	at org.elasticsearch.common.util.concurrent.BaseFuture.get(BaseFuture.java:75)
+	at org.elasticsearch.client.RestHighLevelClient.performClientRequest(RestHighLevelClient.java:2692)
+	... 10 common frames omitted
+Caused by: org.elasticsearch.client.ResponseException: method [GET], host [http://127.0.0.1:9001], URI [/], status line [HTTP/1.1 404 ]
+{"timestamp":"2022-03-07T19:00:58.989+00:00","status":404,"error":"Not Found","message":"No message available","path":"/"}
+	at org.elasticsearch.client.RestClient.convertResponse(RestClient.java:331)
+	at org.elasticsearch.client.RestClient.access$1800(RestClient.java:106)
+	at org.elasticsearch.client.RestClient$1.completed(RestClient.java:381)
+	at org.elasticsearch.client.RestClient$1.completed(RestClient.java:377)
+	at org.apache.http.concurrent.BasicFuture.completed(BasicFuture.java:122)
+	at org.apache.http.impl.nio.client.DefaultClientExchangeHandlerImpl.responseCompleted(DefaultClientExchangeHandlerImpl.java:181)
+	at org.apache.http.nio.protocol.HttpAsyncRequestExecutor.processResponse(HttpAsyncRequestExecutor.java:448)
+	at org.apache.http.nio.protocol.HttpAsyncRequestExecutor.inputReady(HttpAsyncRequestExecutor.java:338)
+	at org.apache.http.impl.nio.DefaultNHttpClientConnection.consumeInput(DefaultNHttpClientConnection.java:265)
+	at org.apache.http.impl.nio.client.InternalIODispatch.onInputReady(InternalIODispatch.java:81)
+	at org.apache.http.impl.nio.client.InternalIODispatch.onInputReady(InternalIODispatch.java:39)
+	at org.apache.http.impl.nio.reactor.AbstractIODispatch.inputReady(AbstractIODispatch.java:114)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.readable(BaseIOReactor.java:162)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvent(AbstractIOReactor.java:337)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvents(AbstractIOReactor.java:315)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.execute(AbstractIOReactor.java:276)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.execute(BaseIOReactor.java:104)
+	at org.apache.http.impl.nio.reactor.AbstractMultiworkerIOReactor$Worker.run(AbstractMultiworkerIOReactor.java:591)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+2022.03.08 00:30:59 ERROR app[][o.s.a.p.EsManagedProcess] Failed to check status
+org.elasticsearch.ElasticsearchException: java.util.concurrent.ExecutionException: org.elasticsearch.client.ResponseException: method [GET], host [http://127.0.0.1:9001], URI [/], status line [HTTP/1.1 404 ]
+{"timestamp":"2022-03-07T19:00:59.581+00:00","status":404,"error":"Not Found","message":"No message available","path":"/"}
+	at org.elasticsearch.client.RestHighLevelClient.performClientRequest(RestHighLevelClient.java:2695)
+	at org.elasticsearch.client.RestHighLevelClient.internalPerformRequest(RestHighLevelClient.java:2171)
+	at org.elasticsearch.client.RestHighLevelClient.performRequest(RestHighLevelClient.java:2137)
+	at org.elasticsearch.client.RestHighLevelClient.performRequestAndParseEntity(RestHighLevelClient.java:2105)
+	at org.elasticsearch.client.ClusterClient.health(ClusterClient.java:151)
+	at org.sonar.application.es.EsConnectorImpl.getClusterHealthStatus(EsConnectorImpl.java:64)
+	at org.sonar.application.process.EsManagedProcess.checkStatus(EsManagedProcess.java:97)
+	at org.sonar.application.process.EsManagedProcess.checkOperational(EsManagedProcess.java:82)
+	at org.sonar.application.process.EsManagedProcess.isOperational(EsManagedProcess.java:67)
+	at org.sonar.application.process.ManagedProcessHandler.refreshState(ManagedProcessHandler.java:220)
+	at org.sonar.application.process.ManagedProcessHandler$EventWatcher.run(ManagedProcessHandler.java:285)
+Caused by: java.util.concurrent.ExecutionException: org.elasticsearch.client.ResponseException: method [GET], host [http://127.0.0.1:9001], URI [/], status line [HTTP/1.1 404 ]
+{"timestamp":"2022-03-07T19:00:59.581+00:00","status":404,"error":"Not Found","message":"No message available","path":"/"}
+	at org.elasticsearch.common.util.concurrent.BaseFuture$Sync.getValue(BaseFuture.java:257)
+	at org.elasticsearch.common.util.concurrent.BaseFuture$Sync.get(BaseFuture.java:244)
+	at org.elasticsearch.common.util.concurrent.BaseFuture.get(BaseFuture.java:75)
+	at org.elasticsearch.client.RestHighLevelClient.performClientRequest(RestHighLevelClient.java:2692)
+	... 10 common frames omitted
+Caused by: org.elasticsearch.client.ResponseException: method [GET], host [http://127.0.0.1:9001], URI [/], status line [HTTP/1.1 404 ]
+{"timestamp":"2022-03-07T19:00:59.581+00:00","status":404,"error":"Not Found","message":"No message available","path":"/"}
+	at org.elasticsearch.client.RestClient.convertResponse(RestClient.java:331)
+	at org.elasticsearch.client.RestClient.access$1800(RestClient.java:106)
+	at org.elasticsearch.client.RestClient$1.completed(RestClient.java:381)
+	at org.elasticsearch.client.RestClient$1.completed(RestClient.java:377)
+	at org.apache.http.concurrent.BasicFuture.completed(BasicFuture.java:122)
+	at org.apache.http.impl.nio.client.DefaultClientExchangeHandlerImpl.responseCompleted(DefaultClientExchangeHandlerImpl.java:181)
+	at org.apache.http.nio.protocol.HttpAsyncRequestExecutor.processResponse(HttpAsyncRequestExecutor.java:448)
+	at org.apache.http.nio.protocol.HttpAsyncRequestExecutor.inputReady(HttpAsyncRequestExecutor.java:338)
+	at org.apache.http.impl.nio.DefaultNHttpClientConnection.consumeInput(DefaultNHttpClientConnection.java:265)
+	at org.apache.http.impl.nio.client.InternalIODispatch.onInputReady(InternalIODispatch.java:81)
+	at org.apache.http.impl.nio.client.InternalIODispatch.onInputReady(InternalIODispatch.java:39)
+	at org.apache.http.impl.nio.reactor.AbstractIODispatch.inputReady(AbstractIODispatch.java:114)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.readable(BaseIOReactor.java:162)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvent(AbstractIOReactor.java:337)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvents(AbstractIOReactor.java:315)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.execute(AbstractIOReactor.java:276)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.execute(BaseIOReactor.java:104)
+	at org.apache.http.impl.nio.reactor.AbstractMultiworkerIOReactor$Worker.run(AbstractMultiworkerIOReactor.java:591)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+2022.03.08 00:31:00 ERROR app[][o.s.a.p.EsManagedProcess] Failed to check status
+org.elasticsearch.ElasticsearchException: java.util.concurrent.ExecutionException: org.elasticsearch.client.ResponseException: method [GET], host [http://127.0.0.1:9001], URI [/], status line [HTTP/1.1 404 ]
+{"timestamp":"2022-03-07T19:01:00.158+00:00","status":404,"error":"Not Found","message":"No message available","path":"/"}
+	at org.elasticsearch.client.RestHighLevelClient.performClientRequest(RestHighLevelClient.java:2695)
+	at org.elasticsearch.client.RestHighLevelClient.internalPerformRequest(RestHighLevelClient.java:2171)
+	at org.elasticsearch.client.RestHighLevelClient.performRequest(RestHighLevelClient.java:2137)
+	at org.elasticsearch.client.RestHighLevelClient.performRequestAndParseEntity(RestHighLevelClient.java:2105)
+	at org.elasticsearch.client.ClusterClient.health(ClusterClient.java:151)
+	at org.sonar.application.es.EsConnectorImpl.getClusterHealthStatus(EsConnectorImpl.java:64)
+	at org.sonar.application.process.EsManagedProcess.checkStatus(EsManagedProcess.java:97)
+	at org.sonar.application.process.EsManagedProcess.checkOperational(EsManagedProcess.java:82)
+	at org.sonar.application.process.EsManagedProcess.isOperational(EsManagedProcess.java:67)
+	at org.sonar.application.process.ManagedProcessHandler.refreshState(ManagedProcessHandler.java:220)
+	at org.sonar.application.process.ManagedProcessHandler$EventWatcher.run(ManagedProcessHandler.java:285)
+Caused by: java.util.concurrent.ExecutionException: org.elasticsearch.client.ResponseException: method [GET], host [http://127.0.0.1:9001], URI [/], status line [HTTP/1.1 404 ]
+{"timestamp":"2022-03-07T19:01:00.158+00:00","status":404,"error":"Not Found","message":"No message available","path":"/"}
+	at org.elasticsearch.common.util.concurrent.BaseFuture$Sync.getValue(BaseFuture.java:257)
+	at org.elasticsearch.common.util.concurrent.BaseFuture$Sync.get(BaseFuture.java:244)
+	at org.elasticsearch.common.util.concurrent.BaseFuture.get(BaseFuture.java:75)
+	at org.elasticsearch.client.RestHighLevelClient.performClientRequest(RestHighLevelClient.java:2692)
+	... 10 common frames omitted
+Caused by: org.elasticsearch.client.ResponseException: method [GET], host [http://127.0.0.1:9001], URI [/], status line [HTTP/1.1 404 ]
+{"timestamp":"2022-03-07T19:01:00.158+00:00","status":404,"error":"Not Found","message":"No message available","path":"/"}
+	at org.elasticsearch.client.RestClient.convertResponse(RestClient.java:331)
+	at org.elasticsearch.client.RestClient.access$1800(RestClient.java:106)
+	at org.elasticsearch.client.RestClient$1.completed(RestClient.java:381)
+	at org.elasticsearch.client.RestClient$1.completed(RestClient.java:377)
+	at org.apache.http.concurrent.BasicFuture.completed(BasicFuture.java:122)
+	at org.apache.http.impl.nio.client.DefaultClientExchangeHandlerImpl.responseCompleted(DefaultClientExchangeHandlerImpl.java:181)
+	at org.apache.http.nio.protocol.HttpAsyncRequestExecutor.processResponse(HttpAsyncRequestExecutor.java:448)
+	at org.apache.http.nio.protocol.HttpAsyncRequestExecutor.inputReady(HttpAsyncRequestExecutor.java:338)
+	at org.apache.http.impl.nio.DefaultNHttpClientConnection.consumeInput(DefaultNHttpClientConnection.java:265)
+	at org.apache.http.impl.nio.client.InternalIODispatch.onInputReady(InternalIODispatch.java:81)
+	at org.apache.http.impl.nio.client.InternalIODispatch.onInputReady(InternalIODispatch.java:39)
+	at org.apache.http.impl.nio.reactor.AbstractIODispatch.inputReady(AbstractIODispatch.java:114)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.readable(BaseIOReactor.java:162)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvent(AbstractIOReactor.java:337)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvents(AbstractIOReactor.java:315)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.execute(AbstractIOReactor.java:276)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.execute(BaseIOReactor.java:104)
+	at org.apache.http.impl.nio.reactor.AbstractMultiworkerIOReactor$Worker.run(AbstractMultiworkerIOReactor.java:591)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+2022.03.08 00:31:00 ERROR app[][o.s.a.p.EsManagedProcess] Failed to check status
+org.elasticsearch.ElasticsearchException: java.util.concurrent.ExecutionException: org.elasticsearch.client.ResponseException: method [GET], host [http://127.0.0.1:9001], URI [/], status line [HTTP/1.1 404 ]
+{"timestamp":"2022-03-07T19:01:00.735+00:00","status":404,"error":"Not Found","message":"No message available","path":"/"}
+	at org.elasticsearch.client.RestHighLevelClient.performClientRequest(RestHighLevelClient.java:2695)
+	at org.elasticsearch.client.RestHighLevelClient.internalPerformRequest(RestHighLevelClient.java:2171)
+	at org.elasticsearch.client.RestHighLevelClient.performRequest(RestHighLevelClient.java:2137)
+	at org.elasticsearch.client.RestHighLevelClient.performRequestAndParseEntity(RestHighLevelClient.java:2105)
+	at org.elasticsearch.client.ClusterClient.health(ClusterClient.java:151)
+	at org.sonar.application.es.EsConnectorImpl.getClusterHealthStatus(EsConnectorImpl.java:64)
+	at org.sonar.application.process.EsManagedProcess.checkStatus(EsManagedProcess.java:97)
+	at org.sonar.application.process.EsManagedProcess.checkOperational(EsManagedProcess.java:82)
+	at org.sonar.application.process.EsManagedProcess.isOperational(EsManagedProcess.java:67)
+	at org.sonar.application.process.ManagedProcessHandler.refreshState(ManagedProcessHandler.java:220)
+	at org.sonar.application.process.ManagedProcessHandler$EventWatcher.run(ManagedProcessHandler.java:285)
+Caused by: java.util.concurrent.ExecutionException: org.elasticsearch.client.ResponseException: method [GET], host [http://127.0.0.1:9001], URI [/], status line [HTTP/1.1 404 ]
+{"timestamp":"2022-03-07T19:01:00.735+00:00","status":404,"error":"Not Found","message":"No message available","path":"/"}
+	at org.elasticsearch.common.util.concurrent.BaseFuture$Sync.getValue(BaseFuture.java:257)
+	at org.elasticsearch.common.util.concurrent.BaseFuture$Sync.get(BaseFuture.java:244)
+	at org.elasticsearch.common.util.concurrent.BaseFuture.get(BaseFuture.java:75)
+	at org.elasticsearch.client.RestHighLevelClient.performClientRequest(RestHighLevelClient.java:2692)
+	... 10 common frames omitted
+Caused by: org.elasticsearch.client.ResponseException: method [GET], host [http://127.0.0.1:9001], URI [/], status line [HTTP/1.1 404 ]
+{"timestamp":"2022-03-07T19:01:00.735+00:00","status":404,"error":"Not Found","message":"No message available","path":"/"}
+	at org.elasticsearch.client.RestClient.convertResponse(RestClient.java:331)
+	at org.elasticsearch.client.RestClient.access$1800(RestClient.java:106)
+	at org.elasticsearch.client.RestClient$1.completed(RestClient.java:381)
+	at org.elasticsearch.client.RestClient$1.completed(RestClient.java:377)
+	at org.apache.http.concurrent.BasicFuture.completed(BasicFuture.java:122)
+	at org.apache.http.impl.nio.client.DefaultClientExchangeHandlerImpl.responseCompleted(DefaultClientExchangeHandlerImpl.java:181)
+	at org.apache.http.nio.protocol.HttpAsyncRequestExecutor.processResponse(HttpAsyncRequestExecutor.java:448)
+	at org.apache.http.nio.protocol.HttpAsyncRequestExecutor.inputReady(HttpAsyncRequestExecutor.java:338)
+	at org.apache.http.impl.nio.DefaultNHttpClientConnection.consumeInput(DefaultNHttpClientConnection.java:265)
+	at org.apache.http.impl.nio.client.InternalIODispatch.onInputReady(InternalIODispatch.java:81)
+	at org.apache.http.impl.nio.client.InternalIODispatch.onInputReady(InternalIODispatch.java:39)
+	at org.apache.http.impl.nio.reactor.AbstractIODispatch.inputReady(AbstractIODispatch.java:114)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.readable(BaseIOReactor.java:162)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvent(AbstractIOReactor.java:337)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvents(AbstractIOReactor.java:315)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.execute(AbstractIOReactor.java:276)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.execute(BaseIOReactor.java:104)
+	at org.apache.http.impl.nio.reactor.AbstractMultiworkerIOReactor$Worker.run(AbstractMultiworkerIOReactor.java:591)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+2022.03.08 00:31:01 ERROR app[][o.s.a.p.EsManagedProcess] Failed to check status
+org.elasticsearch.ElasticsearchException: java.util.concurrent.ExecutionException: org.elasticsearch.client.ResponseException: method [GET], host [http://127.0.0.1:9001], URI [/], status line [HTTP/1.1 404 ]
+{"timestamp":"2022-03-07T19:01:01.311+00:00","status":404,"error":"Not Found","message":"No message available","path":"/"}
+	at org.elasticsearch.client.RestHighLevelClient.performClientRequest(RestHighLevelClient.java:2695)
+	at org.elasticsearch.client.RestHighLevelClient.internalPerformRequest(RestHighLevelClient.java:2171)
+	at org.elasticsearch.client.RestHighLevelClient.performRequest(RestHighLevelClient.java:2137)
+	at org.elasticsearch.client.RestHighLevelClient.performRequestAndParseEntity(RestHighLevelClient.java:2105)
+	at org.elasticsearch.client.ClusterClient.health(ClusterClient.java:151)
+	at org.sonar.application.es.EsConnectorImpl.getClusterHealthStatus(EsConnectorImpl.java:64)
+	at org.sonar.application.process.EsManagedProcess.checkStatus(EsManagedProcess.java:97)
+	at org.sonar.application.process.EsManagedProcess.checkOperational(EsManagedProcess.java:82)
+	at org.sonar.application.process.EsManagedProcess.isOperational(EsManagedProcess.java:67)
+	at org.sonar.application.process.ManagedProcessHandler.refreshState(ManagedProcessHandler.java:220)
+	at org.sonar.application.process.ManagedProcessHandler$EventWatcher.run(ManagedProcessHandler.java:285)
+Caused by: java.util.concurrent.ExecutionException: org.elasticsearch.client.ResponseException: method [GET], host [http://127.0.0.1:9001], URI [/], status line [HTTP/1.1 404 ]
+{"timestamp":"2022-03-07T19:01:01.311+00:00","status":404,"error":"Not Found","message":"No message available","path":"/"}
+	at org.elasticsearch.common.util.concurrent.BaseFuture$Sync.getValue(BaseFuture.java:257)
+	at org.elasticsearch.common.util.concurrent.BaseFuture$Sync.get(BaseFuture.java:244)
+	at org.elasticsearch.common.util.concurrent.BaseFuture.get(BaseFuture.java:75)
+	at org.elasticsearch.client.RestHighLevelClient.performClientRequest(RestHighLevelClient.java:2692)
+	... 10 common frames omitted
+Caused by: org.elasticsearch.client.ResponseException: method [GET], host [http://127.0.0.1:9001], URI [/], status line [HTTP/1.1 404 ]
+{"timestamp":"2022-03-07T19:01:01.311+00:00","status":404,"error":"Not Found","message":"No message available","path":"/"}
+	at org.elasticsearch.client.RestClient.convertResponse(RestClient.java:331)
+	at org.elasticsearch.client.RestClient.access$1800(RestClient.java:106)
+	at org.elasticsearch.client.RestClient$1.completed(RestClient.java:381)
+	at org.elasticsearch.client.RestClient$1.completed(RestClient.java:377)
+	at org.apache.http.concurrent.BasicFuture.completed(BasicFuture.java:122)
+	at org.apache.http.impl.nio.client.DefaultClientExchangeHandlerImpl.responseCompleted(DefaultClientExchangeHandlerImpl.java:181)
+	at org.apache.http.nio.protocol.HttpAsyncRequestExecutor.processResponse(HttpAsyncRequestExecutor.java:448)
+	at org.apache.http.nio.protocol.HttpAsyncRequestExecutor.inputReady(HttpAsyncRequestExecutor.java:338)
+	at org.apache.http.impl.nio.DefaultNHttpClientConnection.consumeInput(DefaultNHttpClientConnection.java:265)
+	at org.apache.http.impl.nio.client.InternalIODispatch.onInputReady(InternalIODispatch.java:81)
+	at org.apache.http.impl.nio.client.InternalIODispatch.onInputReady(InternalIODispatch.java:39)
+	at org.apache.http.impl.nio.reactor.AbstractIODispatch.inputReady(AbstractIODispatch.java:114)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.readable(BaseIOReactor.java:162)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvent(AbstractIOReactor.java:337)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvents(AbstractIOReactor.java:315)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.execute(AbstractIOReactor.java:276)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.execute(BaseIOReactor.java:104)
+	at org.apache.http.impl.nio.reactor.AbstractMultiworkerIOReactor$Worker.run(AbstractMultiworkerIOReactor.java:591)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+2022.03.08 00:31:01 ERROR app[][o.s.a.p.EsManagedProcess] Failed to check status
+org.elasticsearch.ElasticsearchException: java.util.concurrent.ExecutionException: org.elasticsearch.client.ResponseException: method [GET], host [http://127.0.0.1:9001], URI [/], status line [HTTP/1.1 404 ]
+{"timestamp":"2022-03-07T19:01:01.884+00:00","status":404,"error":"Not Found","message":"No message available","path":"/"}
+	at org.elasticsearch.client.RestHighLevelClient.performClientRequest(RestHighLevelClient.java:2695)
+	at org.elasticsearch.client.RestHighLevelClient.internalPerformRequest(RestHighLevelClient.java:2171)
+	at org.elasticsearch.client.RestHighLevelClient.performRequest(RestHighLevelClient.java:2137)
+	at org.elasticsearch.client.RestHighLevelClient.performRequestAndParseEntity(RestHighLevelClient.java:2105)
+	at org.elasticsearch.client.ClusterClient.health(ClusterClient.java:151)
+	at org.sonar.application.es.EsConnectorImpl.getClusterHealthStatus(EsConnectorImpl.java:64)
+	at org.sonar.application.process.EsManagedProcess.checkStatus(EsManagedProcess.java:97)
+	at org.sonar.application.process.EsManagedProcess.checkOperational(EsManagedProcess.java:82)
+	at org.sonar.application.process.EsManagedProcess.isOperational(EsManagedProcess.java:67)
+	at org.sonar.application.process.ManagedProcessHandler.refreshState(ManagedProcessHandler.java:220)
+	at org.sonar.application.process.ManagedProcessHandler$EventWatcher.run(ManagedProcessHandler.java:285)
+Caused by: java.util.concurrent.ExecutionException: org.elasticsearch.client.ResponseException: method [GET], host [http://127.0.0.1:9001], URI [/], status line [HTTP/1.1 404 ]
+{"timestamp":"2022-03-07T19:01:01.884+00:00","status":404,"error":"Not Found","message":"No message available","path":"/"}
+	at org.elasticsearch.common.util.concurrent.BaseFuture$Sync.getValue(BaseFuture.java:257)
+	at org.elasticsearch.common.util.concurrent.BaseFuture$Sync.get(BaseFuture.java:244)
+	at org.elasticsearch.common.util.concurrent.BaseFuture.get(BaseFuture.java:75)
+	at org.elasticsearch.client.RestHighLevelClient.performClientRequest(RestHighLevelClient.java:2692)
+	... 10 common frames omitted
+Caused by: org.elasticsearch.client.ResponseException: method [GET], host [http://127.0.0.1:9001], URI [/], status line [HTTP/1.1 404 ]
+{"timestamp":"2022-03-07T19:01:01.884+00:00","status":404,"error":"Not Found","message":"No message available","path":"/"}
+	at org.elasticsearch.client.RestClient.convertResponse(RestClient.java:331)
+	at org.elasticsearch.client.RestClient.access$1800(RestClient.java:106)
+	at org.elasticsearch.client.RestClient$1.completed(RestClient.java:381)
+	at org.elasticsearch.client.RestClient$1.completed(RestClient.java:377)
+	at org.apache.http.concurrent.BasicFuture.completed(BasicFuture.java:122)
+	at org.apache.http.impl.nio.client.DefaultClientExchangeHandlerImpl.responseCompleted(DefaultClientExchangeHandlerImpl.java:181)
+	at org.apache.http.nio.protocol.HttpAsyncRequestExecutor.processResponse(HttpAsyncRequestExecutor.java:448)
+	at org.apache.http.nio.protocol.HttpAsyncRequestExecutor.inputReady(HttpAsyncRequestExecutor.java:338)
+	at org.apache.http.impl.nio.DefaultNHttpClientConnection.consumeInput(DefaultNHttpClientConnection.java:265)
+	at org.apache.http.impl.nio.client.InternalIODispatch.onInputReady(InternalIODispatch.java:81)
+	at org.apache.http.impl.nio.client.InternalIODispatch.onInputReady(InternalIODispatch.java:39)
+	at org.apache.http.impl.nio.reactor.AbstractIODispatch.inputReady(AbstractIODispatch.java:114)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.readable(BaseIOReactor.java:162)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvent(AbstractIOReactor.java:337)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvents(AbstractIOReactor.java:315)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.execute(AbstractIOReactor.java:276)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.execute(BaseIOReactor.java:104)
+	at org.apache.http.impl.nio.reactor.AbstractMultiworkerIOReactor$Worker.run(AbstractMultiworkerIOReactor.java:591)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+2022.03.08 00:31:02 ERROR app[][o.s.a.p.EsManagedProcess] Failed to check status
+org.elasticsearch.ElasticsearchException: java.util.concurrent.ExecutionException: org.elasticsearch.client.ResponseException: method [GET], host [http://127.0.0.1:9001], URI [/], status line [HTTP/1.1 404 ]
+{"timestamp":"2022-03-07T19:01:02.435+00:00","status":404,"error":"Not Found","message":"No message available","path":"/"}
+	at org.elasticsearch.client.RestHighLevelClient.performClientRequest(RestHighLevelClient.java:2695)
+	at org.elasticsearch.client.RestHighLevelClient.internalPerformRequest(RestHighLevelClient.java:2171)
+	at org.elasticsearch.client.RestHighLevelClient.performRequest(RestHighLevelClient.java:2137)
+	at org.elasticsearch.client.RestHighLevelClient.performRequestAndParseEntity(RestHighLevelClient.java:2105)
+	at org.elasticsearch.client.ClusterClient.health(ClusterClient.java:151)
+	at org.sonar.application.es.EsConnectorImpl.getClusterHealthStatus(EsConnectorImpl.java:64)
+	at org.sonar.application.process.EsManagedProcess.checkStatus(EsManagedProcess.java:97)
+	at org.sonar.application.process.EsManagedProcess.checkOperational(EsManagedProcess.java:82)
+	at org.sonar.application.process.EsManagedProcess.isOperational(EsManagedProcess.java:67)
+	at org.sonar.application.process.ManagedProcessHandler.refreshState(ManagedProcessHandler.java:220)
+	at org.sonar.application.process.ManagedProcessHandler$EventWatcher.run(ManagedProcessHandler.java:285)
+Caused by: java.util.concurrent.ExecutionException: org.elasticsearch.client.ResponseException: method [GET], host [http://127.0.0.1:9001], URI [/], status line [HTTP/1.1 404 ]
+{"timestamp":"2022-03-07T19:01:02.435+00:00","status":404,"error":"Not Found","message":"No message available","path":"/"}
+	at org.elasticsearch.common.util.concurrent.BaseFuture$Sync.getValue(BaseFuture.java:257)
+	at org.elasticsearch.common.util.concurrent.BaseFuture$Sync.get(BaseFuture.java:244)
+	at org.elasticsearch.common.util.concurrent.BaseFuture.get(BaseFuture.java:75)
+	at org.elasticsearch.client.RestHighLevelClient.performClientRequest(RestHighLevelClient.java:2692)
+	... 10 common frames omitted
+Caused by: org.elasticsearch.client.ResponseException: method [GET], host [http://127.0.0.1:9001], URI [/], status line [HTTP/1.1 404 ]
+{"timestamp":"2022-03-07T19:01:02.435+00:00","status":404,"error":"Not Found","message":"No message available","path":"/"}
+	at org.elasticsearch.client.RestClient.convertResponse(RestClient.java:331)
+	at org.elasticsearch.client.RestClient.access$1800(RestClient.java:106)
+	at org.elasticsearch.client.RestClient$1.completed(RestClient.java:381)
+	at org.elasticsearch.client.RestClient$1.completed(RestClient.java:377)
+	at org.apache.http.concurrent.BasicFuture.completed(BasicFuture.java:122)
+	at org.apache.http.impl.nio.client.DefaultClientExchangeHandlerImpl.responseCompleted(DefaultClientExchangeHandlerImpl.java:181)
+	at org.apache.http.nio.protocol.HttpAsyncRequestExecutor.processResponse(HttpAsyncRequestExecutor.java:448)
+	at org.apache.http.nio.protocol.HttpAsyncRequestExecutor.inputReady(HttpAsyncRequestExecutor.java:338)
+	at org.apache.http.impl.nio.DefaultNHttpClientConnection.consumeInput(DefaultNHttpClientConnection.java:265)
+	at org.apache.http.impl.nio.client.InternalIODispatch.onInputReady(InternalIODispatch.java:81)
+	at org.apache.http.impl.nio.client.InternalIODispatch.onInputReady(InternalIODispatch.java:39)
+	at org.apache.http.impl.nio.reactor.AbstractIODispatch.inputReady(AbstractIODispatch.java:114)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.readable(BaseIOReactor.java:162)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvent(AbstractIOReactor.java:337)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvents(AbstractIOReactor.java:315)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.execute(AbstractIOReactor.java:276)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.execute(BaseIOReactor.java:104)
+	at org.apache.http.impl.nio.reactor.AbstractMultiworkerIOReactor$Worker.run(AbstractMultiworkerIOReactor.java:591)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+2022.03.08 00:31:03 ERROR app[][o.s.a.p.EsManagedProcess] Failed to check status
+org.elasticsearch.ElasticsearchException: java.util.concurrent.ExecutionException: org.elasticsearch.client.ResponseException: method [GET], host [http://127.0.0.1:9001], URI [/], status line [HTTP/1.1 404 ]
+{"timestamp":"2022-03-07T19:01:03.029+00:00","status":404,"error":"Not Found","message":"No message available","path":"/"}
+	at org.elasticsearch.client.RestHighLevelClient.performClientRequest(RestHighLevelClient.java:2695)
+	at org.elasticsearch.client.RestHighLevelClient.internalPerformRequest(RestHighLevelClient.java:2171)
+	at org.elasticsearch.client.RestHighLevelClient.performRequest(RestHighLevelClient.java:2137)
+	at org.elasticsearch.client.RestHighLevelClient.performRequestAndParseEntity(RestHighLevelClient.java:2105)
+	at org.elasticsearch.client.ClusterClient.health(ClusterClient.java:151)
+	at org.sonar.application.es.EsConnectorImpl.getClusterHealthStatus(EsConnectorImpl.java:64)
+	at org.sonar.application.process.EsManagedProcess.checkStatus(EsManagedProcess.java:97)
+	at org.sonar.application.process.EsManagedProcess.checkOperational(EsManagedProcess.java:82)
+	at org.sonar.application.process.EsManagedProcess.isOperational(EsManagedProcess.java:67)
+	at org.sonar.application.process.ManagedProcessHandler.refreshState(ManagedProcessHandler.java:220)
+	at org.sonar.application.process.ManagedProcessHandler$EventWatcher.run(ManagedProcessHandler.java:285)
+Caused by: java.util.concurrent.ExecutionException: org.elasticsearch.client.ResponseException: method [GET], host [http://127.0.0.1:9001], URI [/], status line [HTTP/1.1 404 ]
+{"timestamp":"2022-03-07T19:01:03.029+00:00","status":404,"error":"Not Found","message":"No message available","path":"/"}
+	at org.elasticsearch.common.util.concurrent.BaseFuture$Sync.getValue(BaseFuture.java:257)
+	at org.elasticsearch.common.util.concurrent.BaseFuture$Sync.get(BaseFuture.java:244)
+	at org.elasticsearch.common.util.concurrent.BaseFuture.get(BaseFuture.java:75)
+	at org.elasticsearch.client.RestHighLevelClient.performClientRequest(RestHighLevelClient.java:2692)
+	... 10 common frames omitted
+Caused by: org.elasticsearch.client.ResponseException: method [GET], host [http://127.0.0.1:9001], URI [/], status line [HTTP/1.1 404 ]
+{"timestamp":"2022-03-07T19:01:03.029+00:00","status":404,"error":"Not Found","message":"No message available","path":"/"}
+	at org.elasticsearch.client.RestClient.convertResponse(RestClient.java:331)
+	at org.elasticsearch.client.RestClient.access$1800(RestClient.java:106)
+	at org.elasticsearch.client.RestClient$1.completed(RestClient.java:381)
+	at org.elasticsearch.client.RestClient$1.completed(RestClient.java:377)
+	at org.apache.http.concurrent.BasicFuture.completed(BasicFuture.java:122)
+	at org.apache.http.impl.nio.client.DefaultClientExchangeHandlerImpl.responseCompleted(DefaultClientExchangeHandlerImpl.java:181)
+	at org.apache.http.nio.protocol.HttpAsyncRequestExecutor.processResponse(HttpAsyncRequestExecutor.java:448)
+	at org.apache.http.nio.protocol.HttpAsyncRequestExecutor.inputReady(HttpAsyncRequestExecutor.java:338)
+	at org.apache.http.impl.nio.DefaultNHttpClientConnection.consumeInput(DefaultNHttpClientConnection.java:265)
+	at org.apache.http.impl.nio.client.InternalIODispatch.onInputReady(InternalIODispatch.java:81)
+	at org.apache.http.impl.nio.client.InternalIODispatch.onInputReady(InternalIODispatch.java:39)
+	at org.apache.http.impl.nio.reactor.AbstractIODispatch.inputReady(AbstractIODispatch.java:114)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.readable(BaseIOReactor.java:162)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvent(AbstractIOReactor.java:337)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvents(AbstractIOReactor.java:315)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.execute(AbstractIOReactor.java:276)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.execute(BaseIOReactor.java:104)
+	at org.apache.http.impl.nio.reactor.AbstractMultiworkerIOReactor$Worker.run(AbstractMultiworkerIOReactor.java:591)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+uncaught exception in thread [main]
+BindHttpException[Failed to bind to 127.0.0.1:9001]; nested: BindException[Address already in use: bind];
+Likely root cause: java.net.BindException: Address already in use: bind
+	at java.base/sun.nio.ch.Net.bind0(Native Method)
+	at java.base/sun.nio.ch.Net.bind(Net.java:455)
+	at java.base/sun.nio.ch.Net.bind(Net.java:447)
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:227)
+	at io.netty.channel.socket.nio.NioServerSocketChannel.doBind(NioServerSocketChannel.java:134)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.bind(AbstractChannel.java:562)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.bind(DefaultChannelPipeline.java:1334)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeBind(AbstractChannelHandlerContext.java:506)
+	at io.netty.channel.AbstractChannelHandlerContext.bind(AbstractChannelHandlerContext.java:491)
+	at io.netty.channel.DefaultChannelPipeline.bind(DefaultChannelPipeline.java:973)
+	at io.netty.channel.AbstractChannel.bind(AbstractChannel.java:260)
+	at io.netty.bootstrap.AbstractBootstrap$2.run(AbstractBootstrap.java:356)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:164)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:469)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:500)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+For complete error details, refer to the log at C:\Users\skaderi\IntellJ-workspace\bug-tracker\sonarqube-9.3.0.51899\logs\sonarqube.log
+2022.03.08 00:31:03 WARN  app[][o.s.a.p.AbstractManagedProcess] Process exited with exit value [es]: 1
+2022.03.08 00:31:03 INFO  app[][o.s.a.SchedulerImpl] Process[es] is stopped
+2022.03.08 00:31:03 INFO  app[][o.s.a.SchedulerImpl] SonarQube is stopped
+<-- Wrapper Stopped
+--> Wrapper Started as Console
+Launching a JVM...
+Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+  Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+
+2022.03.08 00:33:56 INFO  app[][o.s.a.AppFileSystem] Cleaning or creating temp directory C:\Users\skaderi\IntellJ-workspace\bug-tracker\sonarqube-9.3.0.51899\temp
+2022.03.08 00:33:56 INFO  app[][o.s.a.es.EsSettings] Elasticsearch listening on [HTTP: 127.0.0.1:9092, TCP: 127.0.0.1:50657]
+2022.03.08 00:33:56 INFO  app[][o.s.a.ProcessLauncherImpl] Launch process[[key='es', ipcIndex=1, logFilenamePrefix=es]] from [C:\Users\skaderi\IntellJ-workspace\bug-tracker\sonarqube-9.3.0.51899\elasticsearch]: C:\Program Files\Eclipse Foundation\jdk-11.0.12.7-hotspot\bin\java -XX:+UseG1GC -Djava.io.tmpdir=C:\Users\skaderi\IntellJ-workspace\bug-tracker\sonarqube-9.3.0.51899\temp -XX:ErrorFile=../logs/es_hs_err_pid%p.log -Des.networkaddress.cache.ttl=60 -Des.networkaddress.cache.negative.ttl=10 -XX:+AlwaysPreTouch -Xss1m -Djava.awt.headless=true -Dfile.encoding=UTF-8 -Djna.nosys=true -Djna.tmpdir=C:\Users\skaderi\IntellJ-workspace\bug-tracker\sonarqube-9.3.0.51899\temp -XX:-OmitStackTraceInFastThrow -Dio.netty.noUnsafe=true -Dio.netty.noKeySetOptimization=true -Dio.netty.recycler.maxCapacityPerThread=0 -Dio.netty.allocator.numDirectArenas=0 -Dlog4j.shutdownHookEnabled=false -Dlog4j2.disable.jmx=true -Dlog4j2.formatMsgNoLookups=true -Djava.locale.providers=COMPAT -Dcom.redhat.fips=false -Xmx512m -Xms512m -XX:MaxDirectMemorySize=256m -XX:+HeapDumpOnOutOfMemoryError -Delasticsearch -Des.path.home=C:\Users\skaderi\IntellJ-workspace\bug-tracker\sonarqube-9.3.0.51899\elasticsearch -Des.path.conf=C:\Users\skaderi\IntellJ-workspace\bug-tracker\sonarqube-9.3.0.51899\temp\conf\es -cp lib/* org.elasticsearch.bootstrap.Elasticsearch
+2022.03.08 00:33:56 INFO  app[][o.s.a.SchedulerImpl] Waiting for Elasticsearch to be up and running
+2022.03.08 00:34:06 INFO  app[][o.s.a.SchedulerImpl] Process[es] is up
+2022.03.08 00:34:06 INFO  app[][o.s.a.ProcessLauncherImpl] Launch process[[key='web', ipcIndex=2, logFilenamePrefix=web]] from [C:\Users\skaderi\IntellJ-workspace\bug-tracker\sonarqube-9.3.0.51899]: C:\Program Files\Eclipse Foundation\jdk-11.0.12.7-hotspot\bin\java -Djava.awt.headless=true -Dfile.encoding=UTF-8 -Djava.io.tmpdir=C:\Users\skaderi\IntellJ-workspace\bug-tracker\sonarqube-9.3.0.51899\temp -XX:-OmitStackTraceInFastThrow --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED --add-exports=java.base/jdk.internal.ref=ALL-UNNAMED --add-opens=java.base/java.nio=ALL-UNNAMED --add-opens=java.base/sun.nio.ch=ALL-UNNAMED --add-opens=java.management/sun.management=ALL-UNNAMED --add-opens=jdk.management/com.sun.management.internal=ALL-UNNAMED -Dcom.redhat.fips=false -Xmx512m -Xms128m -XX:+HeapDumpOnOutOfMemoryError -Dhttp.nonProxyHosts=localhost|127.*|[::1] -cp ./lib/sonar-application-9.3.0.51899.jar;C:\Users\skaderi\IntellJ-workspace\bug-tracker\sonarqube-9.3.0.51899\lib\jdbc\h2\h2-1.4.199.jar org.sonar.server.app.WebServer C:\Users\skaderi\IntellJ-workspace\bug-tracker\sonarqube-9.3.0.51899\temp\sq-process13933068798683139610properties
+CTRL-C trapped.  Shutting down.
+CTRL-C trapped.  Forcing immediate shutdown.
+JVM did not exit on request, terminated
+<-- Wrapper Stopped
+--> Wrapper Started as Console
+Launching a JVM...
+Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+  Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+
+2022.03.08 00:35:16 INFO  app[][o.s.a.AppFileSystem] Cleaning or creating temp directory C:\Users\skaderi\IntellJ-workspace\bug-tracker\sonarqube-9.3.0.51899\temp
+2022.03.08 00:35:16 ERROR app[][o.s.application.App] Startup failure
+java.nio.file.AccessDeniedException: C:\Users\skaderi\IntellJ-workspace\bug-tracker\sonarqube-9.3.0.51899\temp\jna17725192427778568467.dll
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:89)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.implDelete(WindowsFileSystemProvider.java:274)
+	at java.base/sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:105)
+	at java.base/java.nio.file.Files.delete(Files.java:1142)
+	at org.sonar.application.AppFileSystem$CleanTempDirFileVisitor.visitFile(AppFileSystem.java:121)
+	at org.sonar.application.AppFileSystem$CleanTempDirFileVisitor.visitFile(AppFileSystem.java:101)
+	at java.base/java.nio.file.Files.walkFileTree(Files.java:2725)
+	at org.sonar.application.AppFileSystem.createOrCleanTempDirectory(AppFileSystem.java:96)
+	at org.sonar.application.AppFileSystem.reset(AppFileSystem.java:62)
+	at org.sonar.application.App.start(App.java:53)
+	at org.sonar.application.App.main(App.java:81)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.tanukisoftware.wrapper.WrapperSimpleApp.run(WrapperSimpleApp.java:240)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+<-- Wrapper Stopped
+--> Wrapper Started as Console
+Launching a JVM...
+Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+  Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+
+2022.03.08 00:35:50 INFO  app[][o.s.a.AppFileSystem] Cleaning or creating temp directory C:\Users\skaderi\IntellJ-workspace\bug-tracker\sonarqube-9.3.0.51899\temp
+2022.03.08 00:35:50 ERROR app[][o.s.application.App] Startup failure
+java.nio.file.AccessDeniedException: C:\Users\skaderi\IntellJ-workspace\bug-tracker\sonarqube-9.3.0.51899\temp\jna17725192427778568467.dll
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:89)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.implDelete(WindowsFileSystemProvider.java:274)
+	at java.base/sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:105)
+	at java.base/java.nio.file.Files.delete(Files.java:1142)
+	at org.sonar.application.AppFileSystem$CleanTempDirFileVisitor.visitFile(AppFileSystem.java:121)
+	at org.sonar.application.AppFileSystem$CleanTempDirFileVisitor.visitFile(AppFileSystem.java:101)
+	at java.base/java.nio.file.Files.walkFileTree(Files.java:2725)
+	at org.sonar.application.AppFileSystem.createOrCleanTempDirectory(AppFileSystem.java:96)
+	at org.sonar.application.AppFileSystem.reset(AppFileSystem.java:62)
+	at org.sonar.application.App.start(App.java:53)
+	at org.sonar.application.App.main(App.java:81)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.tanukisoftware.wrapper.WrapperSimpleApp.run(WrapperSimpleApp.java:240)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+<-- Wrapper Stopped
+--> Wrapper Started as Console
+Launching a JVM...
+Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+  Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+
+2022.03.08 00:36:06 INFO  app[][o.s.a.AppFileSystem] Cleaning or creating temp directory C:\Users\skaderi\IntellJ-workspace\bug-tracker\sonarqube-9.3.0.51899\temp
+2022.03.08 00:36:06 ERROR app[][o.s.application.App] Startup failure
+java.nio.file.AccessDeniedException: C:\Users\skaderi\IntellJ-workspace\bug-tracker\sonarqube-9.3.0.51899\temp\jna17725192427778568467.dll
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:89)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.implDelete(WindowsFileSystemProvider.java:274)
+	at java.base/sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:105)
+	at java.base/java.nio.file.Files.delete(Files.java:1142)
+	at org.sonar.application.AppFileSystem$CleanTempDirFileVisitor.visitFile(AppFileSystem.java:121)
+	at org.sonar.application.AppFileSystem$CleanTempDirFileVisitor.visitFile(AppFileSystem.java:101)
+	at java.base/java.nio.file.Files.walkFileTree(Files.java:2725)
+	at org.sonar.application.AppFileSystem.createOrCleanTempDirectory(AppFileSystem.java:96)
+	at org.sonar.application.AppFileSystem.reset(AppFileSystem.java:62)
+	at org.sonar.application.App.start(App.java:53)
+	at org.sonar.application.App.main(App.java:81)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.tanukisoftware.wrapper.WrapperSimpleApp.run(WrapperSimpleApp.java:240)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+<-- Wrapper Stopped
+--> Wrapper Started as Console
+Launching a JVM...
+Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+  Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+
+2022.03.08 00:37:12 INFO  app[][o.s.a.AppFileSystem] Cleaning or creating temp directory C:\Users\skaderi\IntellJ-workspace\bug-tracker\sonarqube-9.3.0.51899\temp
+2022.03.08 00:37:12 ERROR app[][o.s.application.App] Startup failure
+java.nio.file.AccessDeniedException: C:\Users\skaderi\IntellJ-workspace\bug-tracker\sonarqube-9.3.0.51899\temp\jna17725192427778568467.dll
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:89)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.implDelete(WindowsFileSystemProvider.java:274)
+	at java.base/sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:105)
+	at java.base/java.nio.file.Files.delete(Files.java:1142)
+	at org.sonar.application.AppFileSystem$CleanTempDirFileVisitor.visitFile(AppFileSystem.java:121)
+	at org.sonar.application.AppFileSystem$CleanTempDirFileVisitor.visitFile(AppFileSystem.java:101)
+	at java.base/java.nio.file.Files.walkFileTree(Files.java:2725)
+	at org.sonar.application.AppFileSystem.createOrCleanTempDirectory(AppFileSystem.java:96)
+	at org.sonar.application.AppFileSystem.reset(AppFileSystem.java:62)
+	at org.sonar.application.App.start(App.java:53)
+	at org.sonar.application.App.main(App.java:81)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.tanukisoftware.wrapper.WrapperSimpleApp.run(WrapperSimpleApp.java:240)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+<-- Wrapper Stopped
+--> Wrapper Started as Console
+Launching a JVM...
+Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+  Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+
+2022.03.08 00:38:02 INFO  app[][o.s.a.AppFileSystem] Cleaning or creating temp directory C:\Users\skaderi\IntellJ-workspace\bug-tracker\sonarqube-9.3.0.51899\temp
+2022.03.08 00:38:02 ERROR app[][o.s.application.App] Startup failure
+java.nio.file.AccessDeniedException: C:\Users\skaderi\IntellJ-workspace\bug-tracker\sonarqube-9.3.0.51899\temp\jna17725192427778568467.dll
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:89)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.implDelete(WindowsFileSystemProvider.java:274)
+	at java.base/sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:105)
+	at java.base/java.nio.file.Files.delete(Files.java:1142)
+	at org.sonar.application.AppFileSystem$CleanTempDirFileVisitor.visitFile(AppFileSystem.java:121)
+	at org.sonar.application.AppFileSystem$CleanTempDirFileVisitor.visitFile(AppFileSystem.java:101)
+	at java.base/java.nio.file.Files.walkFileTree(Files.java:2725)
+	at org.sonar.application.AppFileSystem.createOrCleanTempDirectory(AppFileSystem.java:96)
+	at org.sonar.application.AppFileSystem.reset(AppFileSystem.java:62)
+	at org.sonar.application.App.start(App.java:53)
+	at org.sonar.application.App.main(App.java:81)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.tanukisoftware.wrapper.WrapperSimpleApp.run(WrapperSimpleApp.java:240)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+<-- Wrapper Stopped
+--> Wrapper Started as Console
+Launching a JVM...
+Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+  Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+
+2022.03.08 00:50:01 INFO  app[][o.s.a.AppFileSystem] Cleaning or creating temp directory C:\Users\skaderi\IntellJ-workspace\bug-tracker\sonarqube-9.3.0.51899\temp
+2022.03.08 00:50:01 ERROR app[][o.s.application.App] Startup failure
+java.nio.file.AccessDeniedException: C:\Users\skaderi\IntellJ-workspace\bug-tracker\sonarqube-9.3.0.51899\temp\jna17725192427778568467.dll
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:89)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.implDelete(WindowsFileSystemProvider.java:274)
+	at java.base/sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:105)
+	at java.base/java.nio.file.Files.delete(Files.java:1142)
+	at org.sonar.application.AppFileSystem$CleanTempDirFileVisitor.visitFile(AppFileSystem.java:121)
+	at org.sonar.application.AppFileSystem$CleanTempDirFileVisitor.visitFile(AppFileSystem.java:101)
+	at java.base/java.nio.file.Files.walkFileTree(Files.java:2725)
+	at org.sonar.application.AppFileSystem.createOrCleanTempDirectory(AppFileSystem.java:96)
+	at org.sonar.application.AppFileSystem.reset(AppFileSystem.java:62)
+	at org.sonar.application.App.start(App.java:53)
+	at org.sonar.application.App.main(App.java:81)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.tanukisoftware.wrapper.WrapperSimpleApp.run(WrapperSimpleApp.java:240)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+<-- Wrapper Stopped
+--> Wrapper Started as Console
+Launching a JVM...
+Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+  Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+
+2022.03.08 00:50:30 INFO  app[][o.s.a.AppFileSystem] Cleaning or creating temp directory C:\Users\skaderi\IntellJ-workspace\bug-tracker\sonarqube-9.3.0.51899\temp
+2022.03.08 00:50:30 ERROR app[][o.s.application.App] Startup failure
+java.nio.file.AccessDeniedException: C:\Users\skaderi\IntellJ-workspace\bug-tracker\sonarqube-9.3.0.51899\temp\jna17725192427778568467.dll
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:89)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.implDelete(WindowsFileSystemProvider.java:274)
+	at java.base/sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:105)
+	at java.base/java.nio.file.Files.delete(Files.java:1142)
+	at org.sonar.application.AppFileSystem$CleanTempDirFileVisitor.visitFile(AppFileSystem.java:121)
+	at org.sonar.application.AppFileSystem$CleanTempDirFileVisitor.visitFile(AppFileSystem.java:101)
+	at java.base/java.nio.file.Files.walkFileTree(Files.java:2725)
+	at org.sonar.application.AppFileSystem.createOrCleanTempDirectory(AppFileSystem.java:96)
+	at org.sonar.application.AppFileSystem.reset(AppFileSystem.java:62)
+	at org.sonar.application.App.start(App.java:53)
+	at org.sonar.application.App.main(App.java:81)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.tanukisoftware.wrapper.WrapperSimpleApp.run(WrapperSimpleApp.java:240)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+<-- Wrapper Stopped
+--> Wrapper Started as Console
+Launching a JVM...
+Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+  Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+
+2022.03.08 00:52:03 INFO  app[][o.s.a.AppFileSystem] Cleaning or creating temp directory C:\Users\skaderi\IntellJ-workspace\bug-tracker\sonarqube-9.3.0.51899\temp
+2022.03.08 00:52:03 ERROR app[][o.s.application.App] Startup failure
+java.nio.file.AccessDeniedException: C:\Users\skaderi\IntellJ-workspace\bug-tracker\sonarqube-9.3.0.51899\temp\jna17725192427778568467.dll
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:89)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.implDelete(WindowsFileSystemProvider.java:274)
+	at java.base/sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:105)
+	at java.base/java.nio.file.Files.delete(Files.java:1142)
+	at org.sonar.application.AppFileSystem$CleanTempDirFileVisitor.visitFile(AppFileSystem.java:121)
+	at org.sonar.application.AppFileSystem$CleanTempDirFileVisitor.visitFile(AppFileSystem.java:101)
+	at java.base/java.nio.file.Files.walkFileTree(Files.java:2725)
+	at org.sonar.application.AppFileSystem.createOrCleanTempDirectory(AppFileSystem.java:96)
+	at org.sonar.application.AppFileSystem.reset(AppFileSystem.java:62)
+	at org.sonar.application.App.start(App.java:53)
+	at org.sonar.application.App.main(App.java:81)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.tanukisoftware.wrapper.WrapperSimpleApp.run(WrapperSimpleApp.java:240)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+<-- Wrapper Stopped
+--> Wrapper Started as Console
+Launching a JVM...
+Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+  Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+
+2022.03.08 00:52:57 INFO  app[][o.s.a.AppFileSystem] Cleaning or creating temp directory C:\Users\skaderi\IntellJ-workspace\bug-tracker\sonarqube-9.3.0.51899\temp
+2022.03.08 00:52:57 ERROR app[][o.s.application.App] Startup failure
+java.nio.file.AccessDeniedException: C:\Users\skaderi\IntellJ-workspace\bug-tracker\sonarqube-9.3.0.51899\temp\jna17725192427778568467.dll
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:89)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.implDelete(WindowsFileSystemProvider.java:274)
+	at java.base/sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:105)
+	at java.base/java.nio.file.Files.delete(Files.java:1142)
+	at org.sonar.application.AppFileSystem$CleanTempDirFileVisitor.visitFile(AppFileSystem.java:121)
+	at org.sonar.application.AppFileSystem$CleanTempDirFileVisitor.visitFile(AppFileSystem.java:101)
+	at java.base/java.nio.file.Files.walkFileTree(Files.java:2725)
+	at org.sonar.application.AppFileSystem.createOrCleanTempDirectory(AppFileSystem.java:96)
+	at org.sonar.application.AppFileSystem.reset(AppFileSystem.java:62)
+	at org.sonar.application.App.start(App.java:53)
+	at org.sonar.application.App.main(App.java:81)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.tanukisoftware.wrapper.WrapperSimpleApp.run(WrapperSimpleApp.java:240)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+<-- Wrapper Stopped
+--> Wrapper Started as Console
+Launching a JVM...
+Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+  Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+
+2022.03.08 00:54:36 INFO  app[][o.s.a.AppFileSystem] Cleaning or creating temp directory C:\Users\skaderi\IntellJ-workspace\bug-tracker\sonarqube-9.3.0.51899\temp
+2022.03.08 00:54:36 ERROR app[][o.s.application.App] Startup failure
+java.nio.file.AccessDeniedException: C:\Users\skaderi\IntellJ-workspace\bug-tracker\sonarqube-9.3.0.51899\temp\jna17725192427778568467.dll
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:89)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.implDelete(WindowsFileSystemProvider.java:274)
+	at java.base/sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:105)
+	at java.base/java.nio.file.Files.delete(Files.java:1142)
+	at org.sonar.application.AppFileSystem$CleanTempDirFileVisitor.visitFile(AppFileSystem.java:121)
+	at org.sonar.application.AppFileSystem$CleanTempDirFileVisitor.visitFile(AppFileSystem.java:101)
+	at java.base/java.nio.file.Files.walkFileTree(Files.java:2725)
+	at org.sonar.application.AppFileSystem.createOrCleanTempDirectory(AppFileSystem.java:96)
+	at org.sonar.application.AppFileSystem.reset(AppFileSystem.java:62)
+	at org.sonar.application.App.start(App.java:53)
+	at org.sonar.application.App.main(App.java:81)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.tanukisoftware.wrapper.WrapperSimpleApp.run(WrapperSimpleApp.java:240)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+<-- Wrapper Stopped

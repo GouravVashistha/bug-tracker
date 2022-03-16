@@ -40,10 +40,8 @@ public class ProjectService{
                 return user.getBody();
             }
         } catch (URISyntaxException uriSyntaxException) {
-           uriSyntaxException.printStackTrace();
-
+            throw new UserNotFoundException();
         }
-        return new User();
     }
 
     public Project addProject(ProjectDto projectDto) {
