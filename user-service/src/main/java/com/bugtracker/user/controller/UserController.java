@@ -1,5 +1,6 @@
 package com.bugtracker.user.controller;
 
+import com.bugtracker.user.entity.JwtResponse;
 import com.bugtracker.user.vo.ResponseTemplateVO;
 import com.bugtracker.user.dto.UpdateUserDto;
 import com.bugtracker.user.dto.UserDto;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping("/users")
 public class UserController {
 
@@ -36,7 +38,7 @@ public class UserController {
     }
 
     @PostMapping("/authenticate")
-    public String generateToken(@RequestBody AuthRequest authRequest) {
+    public JwtResponse generateToken(@RequestBody AuthRequest authRequest) {
         try {
             authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(authRequest.getUserName(), authRequest.getPassword()));
         }
@@ -56,6 +58,11 @@ public class UserController {
     public ResponseTemplateVO getUserById(@PathVariable("id") Long userId) {
 
         return userService.getUser(userId);
+    }
+
+    @GetMapping(value= "/all")
+    public List<User> getAllUsers() {
+        return userService.getAllUsers();
     }
 
     @PutMapping(value= "/updateUserAccount")

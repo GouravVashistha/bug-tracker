@@ -1,8 +1,277 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="eec8face-4473-4671-89ec-a621f8f4b413" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/bugtracker/user/constant/Constant.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/bugtracker/user/constant/Constant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/bugtracker/user/entity/JwtResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bug/src/main/java/com/bug/controller/BugController.java" beforeDir="false" afterPath="$PROJECT_DIR$/bug/src/main/java/com/bug/controller/BugController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bug/src/main/java/com/bug/service/BugService.java" beforeDir="false" afterPath="$PROJECT_DIR$/bug/src/main/java/com/bug/service/BugService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bug/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/bug/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloud-api-gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/cloud-api-gateway/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/comments/src/main/java/com/comments/controller/CommentsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/comments/src/main/java/com/comments/controller/CommentsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/comments/src/main/java/com/comments/entity/Comments.java" beforeDir="false" afterPath="$PROJECT_DIR$/comments/src/main/java/com/comments/entity/Comments.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/comments/src/main/java/com/comments/service/CommentsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/comments/src/main/java/com/comments/service/CommentsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/comments/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/comments/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/com/project/controller/ProjectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/com/project/controller/ProjectController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/role-master/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/role-master/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/_state/_32.cfe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/_state/_32.cfs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/_state/_32.si" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/_state/_32_2.liv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/_state/_34.cfe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/_state/_34.cfs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/_state/_34.si" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/_state/_35.cfe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/_state/_35.cfs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/_state/_35.si" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/_state/manifest-5.st" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/_state/node-5.st" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/_state/segments_3g" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/EWuknzKuTo2v-10voKgX6w/0/_state/retention-leases-11.st" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/EWuknzKuTo2v-10voKgX6w/0/_state/state-3.st" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/EWuknzKuTo2v-10voKgX6w/0/index/_3.cfe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/EWuknzKuTo2v-10voKgX6w/0/index/_3.cfs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/EWuknzKuTo2v-10voKgX6w/0/index/_3.si" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/EWuknzKuTo2v-10voKgX6w/0/index/_5.cfe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/EWuknzKuTo2v-10voKgX6w/0/index/_5.cfs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/EWuknzKuTo2v-10voKgX6w/0/index/_5.si" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/EWuknzKuTo2v-10voKgX6w/0/index/_5_1.fnm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/EWuknzKuTo2v-10voKgX6w/0/index/_5_1_Lucene80_0.dvd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/EWuknzKuTo2v-10voKgX6w/0/index/_5_1_Lucene80_0.dvm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/EWuknzKuTo2v-10voKgX6w/0/index/_7.cfe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/EWuknzKuTo2v-10voKgX6w/0/index/_7.cfs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/EWuknzKuTo2v-10voKgX6w/0/index/_7.si" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/EWuknzKuTo2v-10voKgX6w/0/index/_7_1.fnm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/EWuknzKuTo2v-10voKgX6w/0/index/_7_1_Lucene80_0.dvd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/EWuknzKuTo2v-10voKgX6w/0/index/_7_1_Lucene80_0.dvm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/EWuknzKuTo2v-10voKgX6w/0/index/_8.cfe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/EWuknzKuTo2v-10voKgX6w/0/index/_8.cfs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/EWuknzKuTo2v-10voKgX6w/0/index/_8.si" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/EWuknzKuTo2v-10voKgX6w/0/index/_8_1.fnm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/EWuknzKuTo2v-10voKgX6w/0/index/_8_1_Lucene80_0.dvd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/EWuknzKuTo2v-10voKgX6w/0/index/_8_1_Lucene80_0.dvm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/EWuknzKuTo2v-10voKgX6w/0/index/_9.cfe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/EWuknzKuTo2v-10voKgX6w/0/index/_9.cfs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/EWuknzKuTo2v-10voKgX6w/0/index/_9.si" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/EWuknzKuTo2v-10voKgX6w/0/index/segments_4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/EWuknzKuTo2v-10voKgX6w/0/translog/translog-7.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/EWuknzKuTo2v-10voKgX6w/0/translog/translog.ckp" beforeDir="false" afterPath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/EWuknzKuTo2v-10voKgX6w/0/translog/translog.ckp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/EWuknzKuTo2v-10voKgX6w/1/_state/retention-leases-7.st" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/EWuknzKuTo2v-10voKgX6w/1/_state/state-3.st" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/EWuknzKuTo2v-10voKgX6w/1/translog/translog-5.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/EWuknzKuTo2v-10voKgX6w/1/translog/translog.ckp" beforeDir="false" afterPath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/EWuknzKuTo2v-10voKgX6w/1/translog/translog.ckp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/EWuknzKuTo2v-10voKgX6w/2/_state/retention-leases-7.st" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/EWuknzKuTo2v-10voKgX6w/2/_state/state-3.st" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/EWuknzKuTo2v-10voKgX6w/2/translog/translog-6.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/EWuknzKuTo2v-10voKgX6w/2/translog/translog.ckp" beforeDir="false" afterPath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/EWuknzKuTo2v-10voKgX6w/2/translog/translog.ckp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/EWuknzKuTo2v-10voKgX6w/3/_state/retention-leases-8.st" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/EWuknzKuTo2v-10voKgX6w/3/_state/state-3.st" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/EWuknzKuTo2v-10voKgX6w/3/translog/translog-6.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/EWuknzKuTo2v-10voKgX6w/3/translog/translog.ckp" beforeDir="false" afterPath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/EWuknzKuTo2v-10voKgX6w/3/translog/translog.ckp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/EWuknzKuTo2v-10voKgX6w/4/_state/retention-leases-7.st" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/EWuknzKuTo2v-10voKgX6w/4/_state/state-3.st" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/EWuknzKuTo2v-10voKgX6w/4/index/_1.cfe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/EWuknzKuTo2v-10voKgX6w/4/index/_1.cfs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/EWuknzKuTo2v-10voKgX6w/4/index/_1.si" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/EWuknzKuTo2v-10voKgX6w/4/index/_1_1.fnm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/EWuknzKuTo2v-10voKgX6w/4/index/_1_1_Lucene80_0.dvd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/EWuknzKuTo2v-10voKgX6w/4/index/_1_1_Lucene80_0.dvm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/EWuknzKuTo2v-10voKgX6w/4/index/_2.cfe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/EWuknzKuTo2v-10voKgX6w/4/index/_2.cfs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/EWuknzKuTo2v-10voKgX6w/4/index/_2.si" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/EWuknzKuTo2v-10voKgX6w/4/index/_2_1.fnm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/EWuknzKuTo2v-10voKgX6w/4/index/_2_1_Lucene80_0.dvd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/EWuknzKuTo2v-10voKgX6w/4/index/_2_1_Lucene80_0.dvm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/EWuknzKuTo2v-10voKgX6w/4/index/_3.cfe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/EWuknzKuTo2v-10voKgX6w/4/index/_3.cfs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/EWuknzKuTo2v-10voKgX6w/4/index/_3.si" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/EWuknzKuTo2v-10voKgX6w/4/index/segments_3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/EWuknzKuTo2v-10voKgX6w/4/translog/translog-6.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/EWuknzKuTo2v-10voKgX6w/4/translog/translog.ckp" beforeDir="false" afterPath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/EWuknzKuTo2v-10voKgX6w/4/translog/translog.ckp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/EWuknzKuTo2v-10voKgX6w/_state/state-22.st" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/FMsvOOBVQQmJqA7mLGPQaQ/0/_state/retention-leases-11.st" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/FMsvOOBVQQmJqA7mLGPQaQ/0/_state/state-3.st" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/FMsvOOBVQQmJqA7mLGPQaQ/0/index/_2.cfe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/FMsvOOBVQQmJqA7mLGPQaQ/0/index/_2.cfs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/FMsvOOBVQQmJqA7mLGPQaQ/0/index/_2.si" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/FMsvOOBVQQmJqA7mLGPQaQ/0/index/_4.cfe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/FMsvOOBVQQmJqA7mLGPQaQ/0/index/_4.cfs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/FMsvOOBVQQmJqA7mLGPQaQ/0/index/_4.si" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/FMsvOOBVQQmJqA7mLGPQaQ/0/index/_4_1.fnm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/FMsvOOBVQQmJqA7mLGPQaQ/0/index/_4_1_Lucene80_0.dvd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/FMsvOOBVQQmJqA7mLGPQaQ/0/index/_4_1_Lucene80_0.dvm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/FMsvOOBVQQmJqA7mLGPQaQ/0/index/_5.cfe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/FMsvOOBVQQmJqA7mLGPQaQ/0/index/_5.cfs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/FMsvOOBVQQmJqA7mLGPQaQ/0/index/_5.si" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/FMsvOOBVQQmJqA7mLGPQaQ/0/index/_5_1.fnm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/FMsvOOBVQQmJqA7mLGPQaQ/0/index/_5_1_Lucene80_0.dvd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/FMsvOOBVQQmJqA7mLGPQaQ/0/index/_5_1_Lucene80_0.dvm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/FMsvOOBVQQmJqA7mLGPQaQ/0/index/_6.cfe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/FMsvOOBVQQmJqA7mLGPQaQ/0/index/_6.cfs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/FMsvOOBVQQmJqA7mLGPQaQ/0/index/_6.si" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/FMsvOOBVQQmJqA7mLGPQaQ/0/index/segments_4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/FMsvOOBVQQmJqA7mLGPQaQ/0/translog/translog-7.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/FMsvOOBVQQmJqA7mLGPQaQ/0/translog/translog.ckp" beforeDir="false" afterPath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/FMsvOOBVQQmJqA7mLGPQaQ/0/translog/translog.ckp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/FMsvOOBVQQmJqA7mLGPQaQ/1/_state/retention-leases-7.st" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/FMsvOOBVQQmJqA7mLGPQaQ/1/_state/state-3.st" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/FMsvOOBVQQmJqA7mLGPQaQ/1/translog/translog-5.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/FMsvOOBVQQmJqA7mLGPQaQ/1/translog/translog.ckp" beforeDir="false" afterPath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/FMsvOOBVQQmJqA7mLGPQaQ/1/translog/translog.ckp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/FMsvOOBVQQmJqA7mLGPQaQ/2/_state/retention-leases-7.st" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/FMsvOOBVQQmJqA7mLGPQaQ/2/_state/state-3.st" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/FMsvOOBVQQmJqA7mLGPQaQ/2/translog/translog-6.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/FMsvOOBVQQmJqA7mLGPQaQ/2/translog/translog.ckp" beforeDir="false" afterPath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/FMsvOOBVQQmJqA7mLGPQaQ/2/translog/translog.ckp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/FMsvOOBVQQmJqA7mLGPQaQ/3/_state/retention-leases-8.st" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/FMsvOOBVQQmJqA7mLGPQaQ/3/_state/state-3.st" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/FMsvOOBVQQmJqA7mLGPQaQ/3/translog/translog-6.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/FMsvOOBVQQmJqA7mLGPQaQ/3/translog/translog.ckp" beforeDir="false" afterPath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/FMsvOOBVQQmJqA7mLGPQaQ/3/translog/translog.ckp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/FMsvOOBVQQmJqA7mLGPQaQ/4/_state/retention-leases-7.st" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/FMsvOOBVQQmJqA7mLGPQaQ/4/_state/state-3.st" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/FMsvOOBVQQmJqA7mLGPQaQ/4/index/_1.cfe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/FMsvOOBVQQmJqA7mLGPQaQ/4/index/_1.cfs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/FMsvOOBVQQmJqA7mLGPQaQ/4/index/_1.si" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/FMsvOOBVQQmJqA7mLGPQaQ/4/index/_1_1.fnm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/FMsvOOBVQQmJqA7mLGPQaQ/4/index/_1_1_Lucene80_0.dvd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/FMsvOOBVQQmJqA7mLGPQaQ/4/index/_1_1_Lucene80_0.dvm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/FMsvOOBVQQmJqA7mLGPQaQ/4/index/_2.cfe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/FMsvOOBVQQmJqA7mLGPQaQ/4/index/_2.cfs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/FMsvOOBVQQmJqA7mLGPQaQ/4/index/_2.si" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/FMsvOOBVQQmJqA7mLGPQaQ/4/index/segments_3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/FMsvOOBVQQmJqA7mLGPQaQ/4/translog/translog-6.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/FMsvOOBVQQmJqA7mLGPQaQ/4/translog/translog.ckp" beforeDir="false" afterPath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/FMsvOOBVQQmJqA7mLGPQaQ/4/translog/translog.ckp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/FMsvOOBVQQmJqA7mLGPQaQ/_state/state-22.st" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/JV-AOXhERwy0VVKCdyeD3A/0/_state/retention-leases-6.st" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/JV-AOXhERwy0VVKCdyeD3A/0/_state/state-3.st" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/JV-AOXhERwy0VVKCdyeD3A/0/translog/translog-6.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/JV-AOXhERwy0VVKCdyeD3A/0/translog/translog.ckp" beforeDir="false" afterPath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/JV-AOXhERwy0VVKCdyeD3A/0/translog/translog.ckp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/JV-AOXhERwy0VVKCdyeD3A/1/_state/retention-leases-6.st" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/JV-AOXhERwy0VVKCdyeD3A/1/_state/state-3.st" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/JV-AOXhERwy0VVKCdyeD3A/1/translog/translog-6.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/JV-AOXhERwy0VVKCdyeD3A/1/translog/translog.ckp" beforeDir="false" afterPath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/JV-AOXhERwy0VVKCdyeD3A/1/translog/translog.ckp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/JV-AOXhERwy0VVKCdyeD3A/_state/state-14.st" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/cmxwTon-TT-q8RljfjqzXA/0/_state/retention-leases-6.st" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/cmxwTon-TT-q8RljfjqzXA/0/_state/state-3.st" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/cmxwTon-TT-q8RljfjqzXA/0/translog/translog-6.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/cmxwTon-TT-q8RljfjqzXA/0/translog/translog.ckp" beforeDir="false" afterPath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/cmxwTon-TT-q8RljfjqzXA/0/translog/translog.ckp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/cmxwTon-TT-q8RljfjqzXA/_state/state-8.st" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/f9ugN-YGTj-x-e0Dfq1hpQ/0/_state/retention-leases-11.st" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/f9ugN-YGTj-x-e0Dfq1hpQ/0/_state/state-3.st" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/f9ugN-YGTj-x-e0Dfq1hpQ/0/index/_3.cfe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/f9ugN-YGTj-x-e0Dfq1hpQ/0/index/_3.cfs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/f9ugN-YGTj-x-e0Dfq1hpQ/0/index/_3.si" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/f9ugN-YGTj-x-e0Dfq1hpQ/0/index/_4.cfe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/f9ugN-YGTj-x-e0Dfq1hpQ/0/index/_4.cfs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/f9ugN-YGTj-x-e0Dfq1hpQ/0/index/_4.si" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/f9ugN-YGTj-x-e0Dfq1hpQ/0/index/_4_1.fnm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/f9ugN-YGTj-x-e0Dfq1hpQ/0/index/_4_1_Lucene80_0.dvd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/f9ugN-YGTj-x-e0Dfq1hpQ/0/index/_4_1_Lucene80_0.dvm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/f9ugN-YGTj-x-e0Dfq1hpQ/0/index/_7.cfe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/f9ugN-YGTj-x-e0Dfq1hpQ/0/index/_7.cfs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/f9ugN-YGTj-x-e0Dfq1hpQ/0/index/_7.si" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/f9ugN-YGTj-x-e0Dfq1hpQ/0/index/_7_1.fnm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/f9ugN-YGTj-x-e0Dfq1hpQ/0/index/_7_1_Lucene80_0.dvd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/f9ugN-YGTj-x-e0Dfq1hpQ/0/index/_7_1_Lucene80_0.dvm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/f9ugN-YGTj-x-e0Dfq1hpQ/0/index/_8.cfe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/f9ugN-YGTj-x-e0Dfq1hpQ/0/index/_8.cfs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/f9ugN-YGTj-x-e0Dfq1hpQ/0/index/_8.si" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/f9ugN-YGTj-x-e0Dfq1hpQ/0/index/_8_1.fnm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/f9ugN-YGTj-x-e0Dfq1hpQ/0/index/_8_1_Lucene80_0.dvd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/f9ugN-YGTj-x-e0Dfq1hpQ/0/index/_8_1_Lucene80_0.dvm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/f9ugN-YGTj-x-e0Dfq1hpQ/0/index/_9.cfe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/f9ugN-YGTj-x-e0Dfq1hpQ/0/index/_9.cfs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/f9ugN-YGTj-x-e0Dfq1hpQ/0/index/_9.si" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/f9ugN-YGTj-x-e0Dfq1hpQ/0/index/segments_4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/f9ugN-YGTj-x-e0Dfq1hpQ/0/translog/translog-7.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/f9ugN-YGTj-x-e0Dfq1hpQ/0/translog/translog.ckp" beforeDir="false" afterPath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/f9ugN-YGTj-x-e0Dfq1hpQ/0/translog/translog.ckp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/f9ugN-YGTj-x-e0Dfq1hpQ/1/_state/retention-leases-7.st" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/f9ugN-YGTj-x-e0Dfq1hpQ/1/_state/state-3.st" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/f9ugN-YGTj-x-e0Dfq1hpQ/1/translog/translog-5.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/f9ugN-YGTj-x-e0Dfq1hpQ/1/translog/translog.ckp" beforeDir="false" afterPath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/f9ugN-YGTj-x-e0Dfq1hpQ/1/translog/translog.ckp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/f9ugN-YGTj-x-e0Dfq1hpQ/2/_state/retention-leases-7.st" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/f9ugN-YGTj-x-e0Dfq1hpQ/2/_state/state-3.st" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/f9ugN-YGTj-x-e0Dfq1hpQ/2/translog/translog-6.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/f9ugN-YGTj-x-e0Dfq1hpQ/2/translog/translog.ckp" beforeDir="false" afterPath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/f9ugN-YGTj-x-e0Dfq1hpQ/2/translog/translog.ckp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/f9ugN-YGTj-x-e0Dfq1hpQ/3/_state/retention-leases-8.st" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/f9ugN-YGTj-x-e0Dfq1hpQ/3/_state/state-3.st" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/f9ugN-YGTj-x-e0Dfq1hpQ/3/translog/translog-6.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/f9ugN-YGTj-x-e0Dfq1hpQ/3/translog/translog.ckp" beforeDir="false" afterPath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/f9ugN-YGTj-x-e0Dfq1hpQ/3/translog/translog.ckp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/f9ugN-YGTj-x-e0Dfq1hpQ/4/_state/retention-leases-7.st" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/f9ugN-YGTj-x-e0Dfq1hpQ/4/_state/state-3.st" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/f9ugN-YGTj-x-e0Dfq1hpQ/4/index/_0.cfe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/f9ugN-YGTj-x-e0Dfq1hpQ/4/index/_0.cfs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/f9ugN-YGTj-x-e0Dfq1hpQ/4/index/_0.si" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/f9ugN-YGTj-x-e0Dfq1hpQ/4/index/_0_1.fnm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/f9ugN-YGTj-x-e0Dfq1hpQ/4/index/_0_1_Lucene80_0.dvd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/f9ugN-YGTj-x-e0Dfq1hpQ/4/index/_0_1_Lucene80_0.dvm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/f9ugN-YGTj-x-e0Dfq1hpQ/4/index/_2.cfe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/f9ugN-YGTj-x-e0Dfq1hpQ/4/index/_2.cfs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/f9ugN-YGTj-x-e0Dfq1hpQ/4/index/_2.si" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/f9ugN-YGTj-x-e0Dfq1hpQ/4/index/_2_1.fnm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/f9ugN-YGTj-x-e0Dfq1hpQ/4/index/_2_1_Lucene80_0.dvd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/f9ugN-YGTj-x-e0Dfq1hpQ/4/index/_2_1_Lucene80_0.dvm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/f9ugN-YGTj-x-e0Dfq1hpQ/4/index/_3.cfe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/f9ugN-YGTj-x-e0Dfq1hpQ/4/index/_3.cfs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/f9ugN-YGTj-x-e0Dfq1hpQ/4/index/_3.si" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/f9ugN-YGTj-x-e0Dfq1hpQ/4/index/segments_3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/f9ugN-YGTj-x-e0Dfq1hpQ/4/translog/translog-6.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/f9ugN-YGTj-x-e0Dfq1hpQ/4/translog/translog.ckp" beforeDir="false" afterPath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/f9ugN-YGTj-x-e0Dfq1hpQ/4/translog/translog.ckp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/f9ugN-YGTj-x-e0Dfq1hpQ/_state/state-21.st" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/h7jZEb06QwOan9ksR4JzHw/0/_state/retention-leases-7.st" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/h7jZEb06QwOan9ksR4JzHw/0/_state/state-3.st" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/h7jZEb06QwOan9ksR4JzHw/0/translog/translog-7.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/h7jZEb06QwOan9ksR4JzHw/0/translog/translog.ckp" beforeDir="false" afterPath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/h7jZEb06QwOan9ksR4JzHw/0/translog/translog.ckp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/h7jZEb06QwOan9ksR4JzHw/_state/state-10.st" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/mBlFfU3pQE2asijEW-ro3Q/0/_state/retention-leases-4.st" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/mBlFfU3pQE2asijEW-ro3Q/0/_state/state-3.st" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/mBlFfU3pQE2asijEW-ro3Q/0/translog/translog-5.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/mBlFfU3pQE2asijEW-ro3Q/0/translog/translog.ckp" beforeDir="false" afterPath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/mBlFfU3pQE2asijEW-ro3Q/0/translog/translog.ckp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/mBlFfU3pQE2asijEW-ro3Q/1/_state/retention-leases-4.st" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/mBlFfU3pQE2asijEW-ro3Q/1/_state/state-3.st" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/mBlFfU3pQE2asijEW-ro3Q/1/translog/translog-5.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/mBlFfU3pQE2asijEW-ro3Q/1/translog/translog.ckp" beforeDir="false" afterPath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/mBlFfU3pQE2asijEW-ro3Q/1/translog/translog.ckp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/mBlFfU3pQE2asijEW-ro3Q/2/_state/retention-leases-4.st" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/mBlFfU3pQE2asijEW-ro3Q/2/_state/state-3.st" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/mBlFfU3pQE2asijEW-ro3Q/2/translog/translog-5.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/mBlFfU3pQE2asijEW-ro3Q/2/translog/translog.ckp" beforeDir="false" afterPath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/mBlFfU3pQE2asijEW-ro3Q/2/translog/translog.ckp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/mBlFfU3pQE2asijEW-ro3Q/3/_state/retention-leases-4.st" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/mBlFfU3pQE2asijEW-ro3Q/3/_state/state-3.st" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/mBlFfU3pQE2asijEW-ro3Q/3/translog/translog-5.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/mBlFfU3pQE2asijEW-ro3Q/3/translog/translog.ckp" beforeDir="false" afterPath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/mBlFfU3pQE2asijEW-ro3Q/3/translog/translog.ckp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/mBlFfU3pQE2asijEW-ro3Q/4/_state/retention-leases-4.st" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/mBlFfU3pQE2asijEW-ro3Q/4/_state/state-3.st" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/mBlFfU3pQE2asijEW-ro3Q/4/translog/translog-5.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/mBlFfU3pQE2asijEW-ro3Q/4/translog/translog.ckp" beforeDir="false" afterPath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/mBlFfU3pQE2asijEW-ro3Q/4/translog/translog.ckp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/es7/nodes/0/indices/mBlFfU3pQE2asijEW-ro3Q/_state/state-19.st" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/sonar.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/sonarqube-9.3.0.51899/data/sonar.mv.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/logs/access.2022-03-09.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/logs/access.2022-03-10.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/logs/access.log" beforeDir="false" afterPath="$PROJECT_DIR$/sonarqube-9.3.0.51899/logs/access.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/logs/ce.2022-03-09.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/logs/ce.2022-03-10.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/logs/ce.log" beforeDir="false" afterPath="$PROJECT_DIR$/sonarqube-9.3.0.51899/logs/ce.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/logs/es.log" beforeDir="false" afterPath="$PROJECT_DIR$/sonarqube-9.3.0.51899/logs/es.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/logs/sonar.20220316.log" beforeDir="false" afterPath="$PROJECT_DIR$/sonarqube-9.3.0.51899/logs/sonar.20220316.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/logs/web.2022-03-09.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/logs/web.2022-03-10.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/logs/web.log" beforeDir="false" afterPath="$PROJECT_DIR$/sonarqube-9.3.0.51899/logs/web.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/temp/conf/es/elasticsearch.keystore" beforeDir="false" afterPath="$PROJECT_DIR$/sonarqube-9.3.0.51899/temp/conf/es/elasticsearch.keystore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/temp/conf/es/elasticsearch.yml" beforeDir="false" afterPath="$PROJECT_DIR$/sonarqube-9.3.0.51899/temp/conf/es/elasticsearch.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/temp/conf/es/log4j2.properties" beforeDir="false" afterPath="$PROJECT_DIR$/sonarqube-9.3.0.51899/temp/conf/es/log4j2.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/temp/jna3168402787030430158.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/temp/jna3168402787030430158.dll.x" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/temp/liblz4-java-12521216750944680542.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/temp/liblz4-java-12521216750944680542.so.lck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/temp/liblz4-java-2494656145052466243.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/temp/liblz4-java-2494656145052466243.so.lck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonarqube-9.3.0.51899/temp/sharedmemory" beforeDir="false" afterPath="$PROJECT_DIR$/sonarqube-9.3.0.51899/temp/sharedmemory" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/bugtracker/user/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/bugtracker/user/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/bugtracker/user/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/bugtracker/user/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/bugtracker/user/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/bugtracker/user/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/bugtracker/user/util/JwtUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/bugtracker/user/util/JwtUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -13,6 +282,32 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="JpbToolWindowState">
+    <option name="myId2FirstActivated">
+      <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="true" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="true" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
+      </map>
+    </option>
+    <option name="myId2Visible">
+      <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="false" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="false" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="false" />
+      </map>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
   <component name="ProjectId" id="25SzzDaTnJchYghHAD49RddPei9" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -22,6 +317,91 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/user-service" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn clean" />
+      <command value="mvn install" />
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.ServiceRegistryApplication">
+    <configuration name="BugApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.bug.BugApplication" />
+      <module name="bug" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.bug.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CloudApiGatewayApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.bugtracker.api.gateway.CloudApiGatewayApplication" />
+      <module name="cloud-api-gateway" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.bugtracker.api.gateway.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CloudConfigServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.bugtracker.config.CloudConfigServiceApplication" />
+      <module name="cloud-config-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.bugtracker.config.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CommentsApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.comments.CommentsApplication" />
+      <module name="comments" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.comments.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServiceRegistryApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.bugtracker.registry.ServiceRegistryApplication" />
+      <module name="service-registry" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.bugtracker.registry.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.ServiceRegistryApplication" />
+        <item itemvalue="Application.CloudApiGatewayApplication" />
+        <item itemvalue="Application.CloudConfigServiceApplication" />
+        <item itemvalue="Application.CommentsApplication" />
+        <item itemvalue="Application.BugApplication" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -33,5 +413,16 @@
       <updated>1645535535535</updated>
     </task>
     <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/role-master/src/test/java/com/bugtracker/role/RoleMasterApplicationTests.java</url>
+          <line>17</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -10,6 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/comments")
+@CrossOrigin(origins= "http://localhost:3000")
 public class CommentsController {
 
     @Autowired
@@ -30,5 +31,10 @@ public class CommentsController {
     @GetMapping("/getByBugId/{id}")
     public List<Comments> getCommentsByBugId(@PathVariable("id") Long bugId) {
         return commentsService.getCommentsByBugId(bugId);
+    }
+
+    @GetMapping("/")
+    public List<Comments> getAllComments() {
+        return commentsService.getAllComments();
     }
 }

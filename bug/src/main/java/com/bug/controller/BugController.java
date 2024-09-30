@@ -11,6 +11,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
+@CrossOrigin(origins= "http://localhost:3000")
 @RestController
 @RequestMapping("/bugs")
 public class BugController {
@@ -41,7 +42,7 @@ public class BugController {
         return bugService.getAllBugs();
     }
 
-    @GetMapping("/tagStaff")
+    @PostMapping("/tagStaff")
     public Boolean tagStaff(@RequestBody TagStaffDto tagStaffDto) {
         return bugService.tagStaff(tagStaffDto.getBugId(), tagStaffDto.getStaffId()
                 , tagStaffDto.getAccessToken());

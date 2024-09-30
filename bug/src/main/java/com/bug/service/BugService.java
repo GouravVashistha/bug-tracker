@@ -46,8 +46,7 @@ public class BugService {
             bug.setSeverity(toBugDto.getSeverity());
             bug.setStatus(Constant.BUG_PENDING);
             bug.setImage(file.getBytes());
-            bug.setImageName(toBugDto.getProjectId() + file.getOriginalFilename() +
-                    project.getClientId() + Math.random() * (1000000 - 1000 + 1) + 1000);
+            bug.setImageName(toBugDto.getProjectId() + file.getOriginalFilename()+project.getClientId()) ;
             bug.setBugSolved(false);
             bug.setProjectId(toBugDto.getProjectId());
             bug.setStaffAssigned(false);
@@ -125,12 +124,12 @@ public class BugService {
 
         HttpHeaders headers = new HttpHeaders();
         headers.setBearerAuth(accessToken);
-        try {
-            new RestTemplate().exchange(RequestEntity.get(new URI("http://localhost:9002/users/getStaffById/" + staffId)).headers(headers).build(), User.class);
-        } catch (URISyntaxException e) {
-            e.printStackTrace();
-
-        }
+//        try {
+//            new RestTemplate().exchange(RequestEntity.get(new URI("http://localhost:9002/users/getStaffById/" + staffId)).headers(headers).build(), User.class);
+//        } catch (URISyntaxException e) {
+//            e.printStackTrace();
+//
+//        }
 
         if (bug == null) {
             throw new BugNotFoundException();

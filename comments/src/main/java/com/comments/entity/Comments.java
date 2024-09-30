@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.sql.Date;
 
 @Entity
 @Data
@@ -24,6 +25,7 @@ public class Comments {
     private boolean isProblemHighlighted;
     private Long postId;
     private Long bugId;
+    private Date date;
 
 
 }

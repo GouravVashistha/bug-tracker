@@ -16,6 +16,9 @@ import org.springframework.web.client.RestTemplate;
 
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.sql.Date;
+import java.time.LocalDateTime;
+import java.util.Calendar;
 import java.util.List;
 
 @Service
@@ -49,6 +52,7 @@ public class CommentsService {
 
         Comments comments= new Comments();
             comments.setComment(commentsDto.getComment());
+            comments.setDate(new java.sql.Date(Calendar.getInstance().getTime().getTime()));
             comments.setPostId(commentsDto.getPostId());
             comments.setBugId(commentsDto.getBugId());
 
@@ -86,5 +90,10 @@ public class CommentsService {
         }
 
         return commentsRepository.findByBugId(bugId);
+    }
+
+    public List<Comments> getAllComments() {
+
+        return commentsRepository.findAll();
     }
 }

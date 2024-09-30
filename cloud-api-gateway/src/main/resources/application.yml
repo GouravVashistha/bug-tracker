@@ -55,19 +55,3 @@ spring:
           args:
             name: COMMENT-SERVICE
             fallbackuri: forward:/commentsServiceFallBack
-
-
-hystrix:
-  command:
-    fallbackcmd:
-      execution:
-        isolation:
-          thread:
-            timeoutInMilliseconds: 4000
-
-
-management:
-  endpoints:
-    web:
-      exposure:
-        include: hystrix.stream

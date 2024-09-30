@@ -2,7 +2,15 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/bug/bug.iml" filepath="$PROJECT_DIR$/bug/bug.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/bug-tracker.iml" filepath="$PROJECT_DIR$/.idea/bug-tracker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-api-gateway/cloud-api-gateway.iml" filepath="$PROJECT_DIR$/cloud-api-gateway/cloud-api-gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-config-service/cloud-config-service.iml" filepath="$PROJECT_DIR$/cloud-config-service/cloud-config-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/comments/comments.iml" filepath="$PROJECT_DIR$/comments/comments.iml" />
+      <module fileurl="file://$PROJECT_DIR$/project/project.iml" filepath="$PROJECT_DIR$/project/project.iml" />
+      <module fileurl="file://$PROJECT_DIR$/role-master/role-master.iml" filepath="$PROJECT_DIR$/role-master/role-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/service-registry/service-registry.iml" filepath="$PROJECT_DIR$/service-registry/service-registry.iml" />
+      <module fileurl="file://$PROJECT_DIR$/user-service/user-service.iml" filepath="$PROJECT_DIR$/user-service/user-service.iml" />
     </modules>
   </component>
 </project>
